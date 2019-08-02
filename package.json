@@ -21,6 +21,7 @@
     "babel-loader": "^8.0.6",
     "classnames": "^2.2.6",
     "concurrently": "^4.1.1",
+    "cross-env": "^5.2.0",
     "css-loader": "^2.0.2",
     "fork-ts-checker-webpack-plugin": "^1.4.0",
     "hard-source-webpack-plugin": "^0.13.1",

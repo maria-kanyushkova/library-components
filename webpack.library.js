@@ -3,7 +3,7 @@ const common = require("./config/webpack.common");
 
 module.exports = {
 	entry: {
-		index: "./components/index.ts",
+		index: "./components/index.tsx",
 	},
 	output: {
 		path: path.resolve(__dirname, "dist"),
