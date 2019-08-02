@@ -1,36 +1,43 @@
 {
   "name": "tass-components",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "private": true,
-  "dependencies": {
-    "@types/jest": "24.0.16",
-    "@types/node": "12.6.8",
-    "@types/react": "16.8.24",
-    "@types/react-dom": "16.8.5",
+  "scripts": {
+    "build": "concurrently -n webpack,tsc \"webpack --config webpack.library.js --env.production  --mode production\" \"tsc --emitDeclarationOnly -p tsconfig.json\"",
+    "start-storybook": ""
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
+    "@types/classnames": "^2.2.6",
+    "@types/lodash": "^4.14.136",
+    "@types/react": "^16.8.24",
+    "@types/react-dom": "^16.8.5",
+    "autoprefixer": "^9.4.3",
+    "babel-loader": "^8.0.6",
+    "classnames": "^2.2.6",
+    "concurrently": "^4.1.1",
+    "css-loader": "^2.0.2",
+    "fork-ts-checker-webpack-plugin": "^1.4.0",
+    "hard-source-webpack-plugin": "^0.13.1",
+    "lodash": "^4.17.15",
+    "node-sass": "^4.11.0",
+    "peer-deps-externals-webpack-plugin": "^1.0.4",
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-loader": "^3.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
-    "typescript": "3.5.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "thread-loader": "^2.1.2",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5",
+    "webpack-node-externals": "^1.7.2"
   }
 }
