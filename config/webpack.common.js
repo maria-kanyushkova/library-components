@@ -34,7 +34,7 @@ module.exports = ({additionalModules = []}) => ({
 		extensions: [".ts", ".tsx", ".js"],
 		modules: ["node_modules", "components", ...additionalModules],
 		alias: {
-			"styles": path.resolve(__dirname, 'src/styles/'),
+			"~styles": path.resolve(__dirname, 'styles'),
 		}
 	},
 	optimization: {
