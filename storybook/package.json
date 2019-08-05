@@ -19,6 +19,7 @@
     "babel-loader": "8.0.5",
     "babel-plugin-named-asset-import": "^0.3.2",
     "babel-preset-react-app": "^9.0.0",
+    "bootstrap": "^4.3.1",
     "camelcase": "^5.2.0",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
     "core-decorators": "^0.20.0",
@@ -56,6 +57,7 @@
     "react-app-polyfill": "^1.0.1",
     "react-dev-utils": "^9.0.1",
     "react-dom": "^16.8.6",
+    "react-event-listener": "^0.6.6",
     "react-final-form": "^6.3.0",
     "resolve": "1.10.0",
     "rxjs": "^6.3.3",
@@ -140,5 +142,11 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "@types/react-router": "^5.0.3",
+    "@types/react-router-dom": "^4.3.4",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1"
   }
 }

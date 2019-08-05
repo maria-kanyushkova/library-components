@@ -1,25 +1,21 @@
 import React from 'react';
-import { Button } from "./components/button";
+import { Route, Switch } from "react-router";
+import { Layout } from "./layers";
+import { pages } from "./pages";
+import { BrowserRouter } from "react-router-dom";
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Button text={'aaa'}/>
-      </header>
-    </div>
-  );
+export const App: React.FC = () => {
+	return (
+		<BrowserRouter>
+			<div className="App">
+				<Layout>
+					<Switch>
+						{pages.map((page, index) => (
+							<Route key={index} exact={true} path={page.path} component={page.component}/>
+						))}
+					</Switch>
+				</Layout>
+			</div>
+		</BrowserRouter>
+	);
 };
-
-export default App;

@@ -1,0 +1,20 @@
+/* UTILS - Файл базовых Переменных, содержащий также начальные Примеси, Функции и Заполнители.
+========================================================================== */
+@import "~styles/utils/variables.scss";
+@import "~styles/utils/functions.scss";
+@import "~styles/utils/scrollbar.scss";
+@import "~styles/utils/elements.scss";
+/* BASE - базовый шаблон роекта
+========================================================================== */
+/* FONTS - базовый шаблон роекта
+========================================================================== */
+@import "~styles/fonts/fonts.scss";
+
+// Import Bootstrap and its default variables
+@import "~bootstrap/scss/bootstrap.scss";
+
+@import "~styles/theme/_styles.scss";
+
+body {
+    background-color: #f2f4f8;
+}
