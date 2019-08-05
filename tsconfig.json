@@ -6,7 +6,6 @@
     "sourceMap": true,
     "baseUrl": "./",
     "outDir": "dist",
-    "rootDir": "components",
     "removeComments": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -19,6 +18,6 @@
     "jsx": "react",
     "incremental": true
   },
-  "include": ["components"],
+  "include": ["./storybook/src/components"],
   "exclude": ["node_modules", "dist"]
 }

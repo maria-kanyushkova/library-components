@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import * as React from "react";
 import { FC } from "react";
-// import "./Button.scss";
+import "./Button.scss";
 import { IButtonProps } from "./IButtonProps";
 import { EButtonType } from ".";
 import { isEmpty } from "lodash";

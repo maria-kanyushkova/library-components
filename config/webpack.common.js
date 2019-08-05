@@ -32,7 +32,7 @@ module.exports = ({additionalModules = []}) => ({
 	externals: [externals()],
 	resolve: {
 		extensions: [".ts", ".tsx", ".js"],
-		modules: ["node_modules", "components", ...additionalModules],
+		modules: ["node_modules", "storybook/src/components", ...additionalModules],
 		alias: {
 			"~styles": path.resolve(__dirname, 'styles'),
 		}
@@ -159,7 +159,7 @@ module.exports = ({additionalModules = []}) => ({
 		new webpack.DefinePlugin(env.stringified),
 		!fastBuildEnabled &&
 		new ForkTsCheckerWebpackPlugin({
-			watch: isDevelopment && "./components",
+			watch: isDevelopment && "./storybook/src/components",
 			checkSyntacticErrors: true,
 		}),
 	].filter(Boolean),
