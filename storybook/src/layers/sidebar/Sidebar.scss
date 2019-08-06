@@ -1,0 +1,28 @@
+@import "~styles/utils/mixins.scss";
+@import "~styles/utils/variables.scss";
+
+.sidebar {
+    height: 100vh;
+    width: 250px;
+    z-index: 10;
+    transition: 0.25s, width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #292D40;
+
+    &__link {
+        color: #a9a9a9;
+        margin: 15px;
+
+        &_active {
+            color: #ffffff;
+        }
+
+        &:hover {
+            color: #a9a9a9;
+            opacity: 0.75;
+            text-decoration: none;
+        }
+    }
+}

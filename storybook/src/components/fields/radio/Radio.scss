@@ -1,0 +1,112 @@
+@import "~styles/utils/variables.scss";
+@import "~styles/utils/mixins.scss";
+
+.radio-field {
+    display: flex;
+    min-height: auto !important;
+
+    .radio {
+        @include square(20px !important);
+
+        position: relative;
+        border-radius: 50%;
+        transition: 0.25s ease-in-out;
+
+        input:hover + .radio__item:before {
+            transition: 0.25s ease-in-out;
+            background: #E4EAF7 !important;
+        }
+
+        &[data-disable="true"] {
+            input:hover ~ .radio__item:before {
+                transition: 0.25s ease-in-out;
+                background: #F2F2F2 !important;
+                border: 1px solid #D9D9D9 !important;
+            }
+
+            .radio__item:before {
+                background: #F2F2F2 !important;
+                border: 1px solid #D9D9D9 !important;
+            }
+
+            input:checked ~ .radio__item:before {
+                background: #F2F2F2 !important;
+                border: 2px solid #A6A6A6 !important;
+            }
+
+
+            input:checked ~ .radio__item:after {
+                background: #A6A6A6 !important;
+            }
+
+            .form-control {
+                cursor: default !important;
+            }
+
+            background: none !important;
+        }
+
+
+        &-label {
+            @include setFontStyle(13px, "SFText-Medium");
+
+            line-height: 20px;
+            color: #000000;
+            display: none;
+            margin-left: 30px;
+
+            &[data-show=true] {
+                display: block;
+            }
+        }
+
+        input {
+            @include square(20px !important);
+
+            position: absolute;
+            z-index: 1;
+            opacity: 0;
+            cursor: pointer;
+            min-height: 20px;
+            margin: 0 !important;
+        }
+
+        input[type="radio"] + .radio__item:after {
+            @include square(8px);
+
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            border-radius: 50%;
+        }
+
+        input[type="radio"]:checked + .radio__item:after {
+            background-color: #00077B;
+        }
+
+        input[type="radio"] + .radio__item:before {
+            @include square(20px);
+
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            border-radius: 50%;
+            border: 1px solid #D9D9D9;
+            background-color: #ffffff;
+        }
+
+        input[type="radio"]:checked + .radio__item:before {
+            border: 2px solid #00077B;
+        }
+    }
+}
