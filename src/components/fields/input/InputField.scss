@@ -1,0 +1,96 @@
+@import "~styles/utils/variables.scss";
+@import "~styles/utils/mixins.scss";
+
+.input-field {
+
+    .form-label {
+        transition: 0.25s ease-in-out !important;
+    }
+
+    .form-control {
+        @include getCustomizeFieldStyle();
+    }
+
+    input:focus + label {
+        color: $grey-0;
+    }
+
+    .icon-before, .icon-after {
+        @include square(44px);
+
+        position: absolute;
+        top: 24px;
+        display: none;
+        margin: 3px;
+        background-size: 44px 44px;
+        background-repeat: no-repeat;
+        z-index: 2;
+    }
+
+    .icon-before {
+        left: 0;
+        background-image: url("img/search.svg");
+    }
+
+    .icon-after {
+        right: 0;
+        transition: 0.25s;
+        background-image: url("img/arrow-right_normal.svg");
+    }
+
+    &[data-icon=true] {
+        .form-control {
+            padding: 10px 50px !important;
+            z-index: 1;
+        }
+
+        .icon-before, .icon-after {
+            display: block;
+        }
+
+        input:focus ~ .icon-after {
+            animation: imageShow 0.25s ease-out;
+            background-image: url("img/arrow-right_focus.svg");
+        }
+    }
+
+    &[data-mini=true] {
+        min-height: 80px;
+
+        .form-control {
+            height: 30px !important;
+            min-height: 30px !important;
+            padding: 0 12px !important;
+        }
+
+        &[data-icon=true] {
+            .form-control {
+                height: 30px !important;
+                min-height: 30px !important;
+                padding: 0 30px !important;
+            }
+
+            .icon-before {
+                @include square(20px !important);
+
+                display: block;
+                margin: 5px;
+                background-image: url("img/search_small.svg");
+                background-size: 20px 20px;
+            }
+
+            .icon-after {
+                display: none;
+            }
+        }
+    }
+}
+
+@keyframes imageShow {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}

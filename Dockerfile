@@ -2,11 +2,11 @@ FROM node:alpine
 
 WORKDIR /devel
 
-COPY storybook/package.json .
-COPY storybook/yarn.lock .
+COPY ./package.json .
+COPY ./yarn.lock .
 
 RUN yarn install
 
-COPY storybook .
+COPY . .
 
 CMD ["npm", "start"]
