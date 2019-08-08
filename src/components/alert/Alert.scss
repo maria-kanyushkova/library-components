@@ -1,0 +1,112 @@
+@import "~styles/utils/variables.scss";
+@import "~styles/utils/mixins.scss";
+
+@mixin getIconAlert($type) {
+    &[data-type=#{$type}] {
+        &:before {
+            background-image: url("./img/#{$type}.svg");
+        }
+    }
+}
+
+.custom-alert {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    height: 50px;
+    width: 325px;
+    display: flex;
+
+    > span {
+        @include setFontStyle(16px, "SFDisplay-Medium");
+
+        line-height: 24px;
+        margin: auto;
+    }
+
+    &[data-type="none"] {
+        background-color: rgba(41, 45, 64, 0.9);
+
+        > span {
+            color: #ffffff;
+        }
+    }
+
+    &[data-type="negative"] {
+        background-color: #FFE6E6;
+
+        > span {
+            color: #EB5757;
+        }
+    }
+
+    &[data-type="positive"] {
+        background-color: #DAF7E4;
+
+        > span {
+            color: #00BF40;
+        }
+    }
+
+    &[data-type="neutral"] {
+        background-color: #E4EAF7;
+
+        > span {
+            color: #00077B;
+        }
+    }
+
+    @include getIconAlert("none");
+    @include getIconAlert("negative");
+    @include getIconAlert("positive");
+    @include getIconAlert("neutral");
+
+    &:before {
+        @include square(44px);
+
+        content: "";
+        display: block;
+        margin: 3px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-repeat: no-repeat;
+        background-size: 44px 44px;
+    }
+
+    &[data-open=true] {
+        animation: 0.25s dataOpen ease-in-out;
+        margin-top: 0 !important;
+        opacity: 1 !important;
+    }
+
+    &[data-open=false] {
+        animation: 0.25s dataClose ease-in-out;
+        margin-top: -40px !important;
+        opacity: 0 !important;
+    }
+}
+
+@keyframes dataOpen {
+    from {
+        margin-top: -40px;
+        opacity: 0;
+    }
+
+    to {
+        margin-top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes dataClose {
+    from {
+        margin-top: 0;
+        opacity: 1;
+    }
+
+    to {
+        margin-top: -40px;
+        opacity: 0;
+    }
+}

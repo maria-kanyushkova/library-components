@@ -1,0 +1,66 @@
+@import "~styles/utils/variables.scss";
+@import "~styles/utils/mixins.scss";
+
+@mixin addColumnType($count) {
+    &_#{$count}-column {
+        grid-template-columns: repeat($count, 1fr);
+    }
+}
+
+.components-store {
+    @include addColumnType(1);
+    @include addColumnType(2);
+    @include addColumnType(3);
+    @include addColumnType(4);
+    @include addColumnType(5);
+    @include addColumnType(6);
+    @include addColumnType(7);
+    @include addColumnType(8);
+
+    > div {
+        display: grid;
+    }
+
+    &__item {
+        height: 250px;
+        display: flex;
+
+        > * {
+            max-width: 80%;
+            width: 100%;
+            margin: auto !important;
+        }
+    }
+
+    .double-buttons {
+        > button {
+            &:first-child {
+                margin: auto 0 auto auto !important;
+            }
+
+            &:last-child {
+                margin: auto auto auto 0 !important;
+            }
+        }
+    }
+
+    .toggle-items {
+        > div > div {
+            max-width: 200px;
+        }
+    }
+
+    .checkbox-fields, .radio-fields {
+        > div {
+            max-width: 100px;
+
+            &:first-child {
+                margin-right: 5px !important;
+            }
+
+            &:last-child {
+                margin-left: 5px !important;
+            }
+        }
+    }
+}

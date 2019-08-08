@@ -1,0 +1,75 @@
+@import "~styles/utils/variables.scss";
+@import "~styles/utils/mixins.scss";
+
+.form-group {
+    margin-bottom: 10px;
+    min-height: 100px;
+    transition: 0.25s ease-in-out;
+    position: relative;
+
+    .form-label {
+        @include setFontStyle(13px, "SFText-Regular");
+
+        color: #808080;
+        line-height: 20px;
+        margin-bottom: 2px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .form-control {
+        @include setFontStyle(16px, "SFDisplay-Regular");
+
+        color: #000000;
+        line-height: 24px;
+        margin: 24px 0 6px;
+        border-radius: 6px !important;
+        height: 50px;
+    }
+
+    .form-text {
+        @include setFontStyle(13px, "SFText-Regular");
+
+        color: #EB5757;
+        line-height: 20px;
+        margin: 0;
+    }
+
+    &[data-visible=false] {
+        display: none;
+    }
+
+    input, select {
+        min-height: 48px;
+    }
+}
+
+.multiSelect-field {
+    .multi-value-container {
+        background-color: rgb(230, 230, 230);
+        display: flex;
+        min-width: 0;
+        border-radius: 11px;
+        margin: 2px 8px 2px 2px;
+
+        > div {
+            &:first-child {
+                padding: 2px 5px 4px 10px;;
+            }
+
+            &:last-child {
+                @include square(24px);
+
+                padding: 0 5px;
+                background-color: rgb(210, 210, 210);
+                border-radius: 11px;
+                transition: 0.25s;
+
+                &:hover {
+                    background-color: rgb(255, 165, 165);
+                }
+            }
+        }
+    }
+}

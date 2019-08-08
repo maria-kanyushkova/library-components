@@ -1,0 +1,42 @@
+@import "~styles/utils/mixins.scss";
+
+$tabsHeight: 48px;
+$icon-size: 30px;
+
+.tabs-container {
+    height: 100%;
+    position: relative;
+    float: left;
+    margin-top: 5px;
+
+    .tabs {
+        background-color: transparent;
+        display: flex;
+    }
+
+    .tabs-item {
+        width: 100%;
+        overflow: auto;
+    }
+
+    .tab-item {
+        &__label {
+            @include setFontStyle(16px, "SFDisplay-Semibold");
+
+            color: #808080;
+            display: block;
+            padding: 5px 0 9px;
+            margin-right: 40px;
+            cursor: pointer;
+            text-align: center;
+            border-bottom: 4px solid #ffffff00;
+            transition: 0.25s ease-in-out;
+
+            &[data-active=true] {
+                color: #000000;
+                cursor: default;
+                border-bottom-color: #000000;
+            }
+        }
+    }
+}

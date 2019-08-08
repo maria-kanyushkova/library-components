@@ -1,0 +1,26 @@
+@import "~styles/utils/variables.scss";
+@import "~styles/utils/mixins.scss";
+
+
+.textarea-container {
+    textarea {
+        resize: none;
+    }
+
+    .form-text {
+        height: 21px;
+    }
+
+    .form-control {
+        @include getCustomizeFieldStyle();
+
+        height: auto;
+        padding: 13px 15px;
+        max-height: 250px !important;
+        overflow-y: auto !important;
+    }
+
+    textarea:focus + label {
+        color: $grey-0;
+    }
+}

@@ -1,0 +1,177 @@
+@import "~styles/utils/variables.scss";
+@import "~styles/utils/mixins.scss";
+
+@mixin setButtonIcon($icon, $type) {
+    &[data-type=#{$type}] {
+        &[data-icon=#{$icon}] {
+            &:before {
+                background-image: url("./img/#{$icon}/#{$type}-#{$icon}-normal.svg");
+            }
+
+            &:active {
+                &:before {
+                    background-image: url("./img/#{$icon}/#{$type}-#{$icon}-focus.svg");
+                }
+            }
+
+            &.disabled {
+                &:before {
+                    background-image: url("./img/#{$icon}/#{$type}-#{$icon}-disabled.svg");
+                }
+            }
+        }
+    }
+}
+
+.custom-button {
+    @include setFontStyle(16px, "SFDisplay-Medium");
+
+    line-height: 24px;
+    height: 50px;
+    max-width: 325px !important;
+    outline: none !important;
+    padding: 13px 20px;
+    border-radius: 6px;
+    position: relative;
+    text-align: left;
+    transition: 0.25s ease-in-out;
+
+    &[data-type="primary"] {
+        background-color: #00077B;
+        color: #ffffff;
+
+        &:hover {
+            background-color: #2043bd;
+        }
+
+        &:focus {
+            box-shadow: none !important;
+        }
+
+        &:active {
+            background-color: #2043bd;
+            color: #8fa1de;
+        }
+
+        &.disabled {
+            background-color: #a6a6a6;
+            color: #E6E6E6;
+        }
+    }
+
+    &[data-type="secondary"] {
+        background-color: #e4eaf7;
+        color: #00077B;
+
+        &:hover {
+            background-color: #c3d5f9;
+        }
+
+        &:focus {
+            box-shadow: none !important;
+        }
+
+        &:active {
+            background-color: #c3d5f9;
+            color: #626EBA;
+        }
+
+        &.disabled {
+            background-color: #f2f2f2;
+            color: #A6A6A6;
+        }
+    }
+
+    &[data-type="floating"] {
+        background-color: #ffffff;
+        color: #00077B;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) !important;
+
+        &:hover {
+            border: 1px solid #00077B;
+        }
+
+        &:active {
+            color: rgba(0, 7, 123, 0.5);
+        }
+
+        &.disabled {
+            background-color: #ffffff;
+            color: #A6A6A6;
+        }
+    }
+
+    &.disabled, &[data-type="inactive"] {
+        pointer-events: none;
+        cursor: default;
+        opacity: 1;
+        box-shadow: none;
+    }
+
+    &.button-tiny {
+        height: 30px;
+        padding: 3px 10px;
+    }
+
+    &.button-mini {
+        @include square(50px);
+
+        &.button-tiny {
+            @include square(30px !important);
+        }
+
+        &[data-type="floating"] {
+            border-radius: 50%;
+        }
+    }
+
+    &.button-tiny {
+        &:before {
+            @include square(20px);
+
+            background-size: 20px 20px;
+            top: 4px;
+            right: 4px;
+        }
+    }
+
+    &[data-double=true] {
+        &:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        &:last-child {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+
+
+    @include setButtonIcon("plus", "primary");
+    @include setButtonIcon("plus", "secondary");
+    @include setButtonIcon("plus-tiny", "primary");
+    @include setButtonIcon("plus-tiny", "secondary");
+
+    @include setButtonIcon("arrow-down", "primary");
+    @include setButtonIcon("arrow-down", "secondary");
+    @include setButtonIcon("arrow-down-tiny", "primary");
+    @include setButtonIcon("arrow-down-tiny", "secondary");
+
+    @include setButtonIcon("arrow-right", "floating");
+    @include setButtonIcon("arrow-right", "primary");
+    @include setButtonIcon("arrow-left", "primary");
+    @include setButtonIcon("arrow-top", "floating");
+
+    &:before {
+        @include square(44px);
+
+        content: "";
+        display: block;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        background-position: center center;
+        background-size: 44px 44px;
+        background-repeat: no-repeat;
+    }
+}
