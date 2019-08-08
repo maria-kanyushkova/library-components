@@ -1,0 +1,30 @@
+.ball-chasing .loader {
+    width: 100px;
+    height: 100px;
+    animation: rotate 2s linear infinite;
+}
+.ball-chasing .loader .ball-1, .ball-chasing .loader .ball-2 {
+    position: absolute;
+    top: 0;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background-color: #00077B;
+    animation: chasingBallBounce 2s linear infinite;
+}
+.ball-chasing .loader .ball-2 {
+    top: auto;
+    bottom: 0;
+    animation-delay: -1s;
+}
+
+@keyframes chasingBallBounce {
+    50% {
+        transform: scale(0);
+    }
+}
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,35 @@
+.clock .loader {
+    width: 100px;
+    height: 100px;
+}
+.clock .loader .arc {
+    position: relative;
+    margin: 23% 0 0 23%;
+    border: 2px solid #00077b;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.clock .loader .arc::after, .clock .loader .arc::before {
+    content: "";
+    position: absolute;
+    top: 4%;
+    left: 48%;
+    width: 4%;
+    height: 46%;
+    background-color: #00077b;
+    transform-origin: 50% 100%;
+    border-radius: 5px;
+    animation: rotate 2s infinite linear;
+}
+.clock .loader .arc::after {
+    height: 36%;
+    top: 14%;
+    animation-duration: 12s;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
