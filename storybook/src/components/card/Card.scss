@@ -44,9 +44,3 @@
         box-shadow: 0 8px 24px 0 rgba(185, 185, 185, 0.5);
     }
 }
-
-@media print {
-    .card-header__print {
-        display: none;
-    }
-}

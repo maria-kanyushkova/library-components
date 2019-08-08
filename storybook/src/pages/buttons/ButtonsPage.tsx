@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Component, Fragment, ReactNode } from "react";
-import "../ComponentsStore.scss";
-import { Button, EButtonType, CustomForm } from "../../components";
 import { FormRenderProps } from "react-final-form";
+import { CustomForm } from "../../components/custom-form";
+import { Button, EButtonType } from "../../components/button";
 
 export class ButtonsPage extends Component {
     render(): ReactNode {
@@ -20,6 +20,53 @@ export class ButtonsPage extends Component {
     private renderForm(api: FormRenderProps, submitting?: boolean): ReactNode {
         return (
             <Fragment>
+                <div className="components-store_4-column">
+                    <div className="components-store__item">
+                        <Button
+                            type="floating"
+                            icon={EButtonType.ARROW_TOP}
+                            isMini={true}
+                        />
+                    </div>
+                    <div className="components-store__item">
+                        <Button
+                            type="floating"
+                            icon={EButtonType.ARROW_TOP}
+                            isMini={true}
+                            disabled={true}
+                        />
+                    </div>
+                    <div className="components-store__item double-buttons">
+                        <Button
+                            type="primary"
+                            icon={EButtonType.ARROW_LEFT}
+                            isMini={true}
+                            isDouble={true}
+                        />
+                        <Button
+                            type="primary"
+                            icon={EButtonType.ARROW_RIGHT}
+                            isMini={true}
+                            isDouble={true}
+                        />
+                    </div>
+                    <div className="components-store__item double-buttons">
+                        <Button
+                            type="primary"
+                            icon={EButtonType.ARROW_LEFT}
+                            isMini={true}
+                            isDouble={true}
+                            disabled={true}
+                        />
+                        <Button
+                            type="primary"
+                            icon={EButtonType.ARROW_RIGHT}
+                            isMini={true}
+                            isDouble={true}
+                            disabled={true}
+                        />
+                    </div>
+                </div>
                 <div className="components-store_8-column">
                     <div className="components-store__item">
                         <Button
@@ -155,15 +202,45 @@ export class ButtonsPage extends Component {
                 <div className="components-store_4-column">
                     <div className="components-store__item">
                         <Button
+                            type="floating"
+                            text="Floating"
+                        />
+                    </div>
+                    <div className="components-store__item">
+                        <Button
+                            type="floating"
+                            text="Icon"
+                            icon={EButtonType.ARROW_RIGHT}
+                        />
+                    </div>
+                    <div className="components-store__item">
+                        <Button
+                            type="floating"
+                            text="Disabled"
+                            disabled={true}
+                        />
+                    </div>
+                    <div className="components-store__item">
+                        <Button
+                            type="floating"
+                            text="Disabled icon"
+                            icon={EButtonType.ARROW_RIGHT}
+                            disabled={true}
+                        />
+                    </div>
+                </div>
+                <div className="components-store_4-column">
+                    <div className="components-store__item">
+                        <Button
                             type="secondary"
-                            text="Example primary"
+                            text="Disabled secondary"
                             disabled={true}
                         />
                     </div>
                     <div className="components-store__item">
                         <Button
                             type="secondary"
-                            text="Example small"
+                            text="Tiny"
                             isTiny={true}
                             disabled={true}
                         />
@@ -171,7 +248,7 @@ export class ButtonsPage extends Component {
                     <div className="components-store__item">
                         <Button
                             type="secondary"
-                            text="Example icon"
+                            text="Icon"
                             icon={EButtonType.ARROW_DOWN}
                             disabled={true}
                         />
@@ -179,7 +256,7 @@ export class ButtonsPage extends Component {
                     <div className="components-store__item">
                         <Button
                             type="secondary"
-                            text="Example icon"
+                            text="Tiny icon"
                             icon={EButtonType.ARROW_DOWN}
                             isTiny={true}
                             disabled={true}
@@ -190,14 +267,14 @@ export class ButtonsPage extends Component {
                     <div className="components-store__item">
                         <Button
                             type="primary"
-                            text="Example primary"
+                            text="Disabled primary"
                             disabled={true}
                         />
                     </div>
                     <div className="components-store__item">
                         <Button
                             type="primary"
-                            text="Example small"
+                            text="Tiny"
                             isTiny={true}
                             disabled={true}
                         />
@@ -205,7 +282,7 @@ export class ButtonsPage extends Component {
                     <div className="components-store__item">
                         <Button
                             type="primary"
-                            text="Example icon"
+                            text="Icon"
                             icon={EButtonType.ARROW_DOWN}
                             disabled={true}
                         />
@@ -213,7 +290,7 @@ export class ButtonsPage extends Component {
                     <div className="components-store__item">
                         <Button
                             type="primary"
-                            text="Example icon"
+                            text="Tiny icon"
                             icon={EButtonType.ARROW_DOWN}
                             isTiny={true}
                             disabled={true}
@@ -224,57 +301,29 @@ export class ButtonsPage extends Component {
                     <div className="components-store__item">
                         <Button
                             type="secondary"
-                            text="Example primary"
-                        />
-                    </div>
-                    <div className="components-store__item">
-                        <Button
-                            type="secondary"
-                            text="Example small"
-                            isTiny={true}
-                        />
-                    </div>
-                    <div className="components-store__item">
-                        <Button
-                            type="secondary"
-                            text="Example icon"
+                            text="Secondary icon"
                             icon={EButtonType.ARROW_DOWN}
                         />
                     </div>
                     <div className="components-store__item">
                         <Button
                             type="secondary"
-                            text="Example icon"
+                            text="Tiny icon"
                             icon={EButtonType.ARROW_DOWN}
                             isTiny={true}
                         />
                     </div>
-                </div>
-                <div className="components-store_4-column">
                     <div className="components-store__item">
                         <Button
                             type="secondary"
-                            text="Example primary"
-                        />
-                    </div>
-                    <div className="components-store__item">
-                        <Button
-                            type="secondary"
-                            text="Example small"
-                            isTiny={true}
-                        />
-                    </div>
-                    <div className="components-store__item">
-                        <Button
-                            type="secondary"
-                            text="Example icon"
+                            text="Icon"
                             icon={EButtonType.PLUS}
                         />
                     </div>
                     <div className="components-store__item">
                         <Button
                             type="secondary"
-                            text="Example icon"
+                            text="Tiny icon"
                             icon={EButtonType.PLUS}
                             isTiny={true}
                         />
@@ -283,29 +332,27 @@ export class ButtonsPage extends Component {
                 <div className="components-store_4-column">
                     <div className="components-store__item">
                         <Button
-                            type="primary"
-                            text="Example primary"
+                            type="secondary"
+                            text="Secondary"
                         />
                     </div>
                     <div className="components-store__item">
                         <Button
-                            type="primary"
-                            text="Example small"
+                            type="secondary"
+                            text="Tiny"
                             isTiny={true}
                         />
                     </div>
                     <div className="components-store__item">
                         <Button
                             type="primary"
-                            text="Example icon"
-                            icon={EButtonType.ARROW_DOWN}
+                            text="Primary"
                         />
                     </div>
                     <div className="components-store__item">
                         <Button
                             type="primary"
-                            text="Example icon"
-                            icon={EButtonType.ARROW_DOWN}
+                            text="Tiny"
                             isTiny={true}
                         />
                     </div>
@@ -314,27 +361,29 @@ export class ButtonsPage extends Component {
                     <div className="components-store__item">
                         <Button
                             type="primary"
-                            text="Example primary"
+                            text="Primary icon"
+                            icon={EButtonType.ARROW_DOWN}
                         />
                     </div>
                     <div className="components-store__item">
                         <Button
                             type="primary"
-                            text="Example small"
+                            text="Tiny icon"
+                            icon={EButtonType.ARROW_DOWN}
                             isTiny={true}
                         />
                     </div>
                     <div className="components-store__item">
                         <Button
                             type="primary"
-                            text="Example icon"
+                            text="Primary icon"
                             icon={EButtonType.PLUS}
                         />
                     </div>
                     <div className="components-store__item">
                         <Button
                             type="primary"
-                            text="Example icon"
+                            text="Tiny icon"
                             icon={EButtonType.PLUS}
                             isTiny={true}
                         />

@@ -22,9 +22,12 @@ export const Tab: FC<ICustomTabProps> = (props) => {
 			<div className="tabs">
 				{
 					items.map((item: ITabItem, index) => {
-						const {text} = item;
+						const {text, handler} = item;
 						const isActiveTab = activeTab === index;
-						const onClick = () => setActiveTab(index);
+						const onClick = () => {
+							setActiveTab(index);
+							handler();
+						};
 						return (
 							<div
 								key={index}
