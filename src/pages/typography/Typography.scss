@@ -1,0 +1,77 @@
+@import "~styles/utils/variables.scss";
+@import "~styles/utils/mixins.scss";
+
+.typography-store {
+    > div {
+        height: 100px;
+    }
+
+    .typography {
+        > span {
+            line-height: 32px;
+            width: 100%;
+            display: block;
+        }
+
+        &[data-type="SFDisplay-Thin"] {
+            @include setFontStyle(18px, "SFDisplay-Thin");
+        }
+
+        &[data-type="SFDisplay-UltraLight"] {
+            @include setFontStyle(18px, "SFDisplay-UltraLight");
+        }
+
+        &[data-type="SFDisplay-Light"] {
+            @include setFontStyle(18px, "SFDisplay-Light");
+        }
+
+        &[data-type="SFDisplay-Regular"] {
+            @include setFontStyle(18px, "SFDisplay-Regular");
+        }
+
+        &[data-type="SFDisplay-Medium"] {
+            @include setFontStyle(18px, "SFDisplay-Medium");
+        }
+
+        &[data-type="SFDisplay-Semibold"] {
+            @include setFontStyle(18px, "SFDisplay-Semibold");
+        }
+
+        &[data-type="SFDisplay-Bold"] {
+            @include setFontStyle(18px, "SFDisplay-Bold");
+        }
+
+        &[data-type="SFDisplay-Heavy"] {
+            @include setFontStyle(18px, "SFDisplay-Heavy");
+        }
+
+        &[data-type="SFDisplay-Black"] {
+            @include setFontStyle(18px, "SFDisplay-Black");
+        }
+
+
+        &[data-type="SFText-Light"] {
+            @include setFontStyle(18px, "SFText-Light");
+        }
+
+        &[data-type="SFText-Regular"] {
+            @include setFontStyle(18px, "SFText-Regular");
+        }
+
+        &[data-type="SFText-Medium"] {
+            @include setFontStyle(18px, "SFText-Medium");
+        }
+
+        &[data-type="SFText-Semibold"] {
+            @include setFontStyle(18px, "SFText-Semibold");
+        }
+
+        &[data-type="SFText-Bold"] {
+            @include setFontStyle(18px, "SFText-Bold");
+        }
+
+        &[data-type="SFText-Heavy"] {
+            @include setFontStyle(18px, "SFText-Heavy");
+        }
+    }
+}
