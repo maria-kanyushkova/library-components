@@ -2,8 +2,8 @@ FROM node:alpine
 
 WORKDIR /devel
 
-COPY ./package.json .
-COPY ./yarn.lock .
+COPY package.json .
+COPY yarn.lock .
 
 RUN yarn install
 

@@ -1,5 +1,5 @@
 {
-  "name": "@tass/tass-components",
+  "name": "@tass/components",
   "version": "1.0.0",
   "main": "build/index.js",
   "module": "build/index.js",
