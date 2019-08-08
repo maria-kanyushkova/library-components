@@ -12,8 +12,12 @@
     background: #292D40;
 
     &__link {
+        @include setFontStyle(16px, "SFDisplay-Medium");
+
+        line-height: 24px;
         color: #a9a9a9;
         margin: 15px;
+        text-decoration: none;
 
         &_active {
             color: #ffffff;
