@@ -1,0 +1,20 @@
+{
+  "extends": "./config/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "build",
+    "baseUrl": "src",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "build": false,
+    "composite": false,
+    "sourceMap": false,
+    "rootDirs": [
+      "src/components",
+      "src/interfaces"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}
