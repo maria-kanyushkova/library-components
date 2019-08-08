@@ -32,6 +32,18 @@
         }
     }
 
+    .double-buttons {
+        > button {
+            &:first-child {
+                margin: auto 0 auto auto !important;
+            }
+
+            &:last-child {
+                margin: auto auto auto 0 !important;
+            }
+        }
+    }
+
     .toggle-items {
         > div > div {
             max-width: 200px;

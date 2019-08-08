@@ -1,10 +1,10 @@
 @import "~styles/utils/mixins.scss";
 
 .app-content {
-    width: 100%;
+    width: calc(100% - 250px);
     height: 100vh;
     padding: 24px 30px;
     margin: 0;
     overflow-y: auto;
-    background: #F2F2F2;
+    background: #f4f4f485;
 }

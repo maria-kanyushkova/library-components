@@ -9,6 +9,7 @@ export interface IButtonProps extends HTMLProps<HTMLButtonElement> {
     icon?: EButtonType;
     isTiny?: boolean;
     isMini?: boolean;
+    isDouble?: boolean;
 
     onClick?(event: MouseEvent<HTMLElement>): void;
 }
