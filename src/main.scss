@@ -1,20 +1,29 @@
-/* UTILS - Файл базовых Переменных, содержащий также начальные Примеси, Функции и Заполнители.
-========================================================================== */
-@import "../styles/utils/variables.scss";
-@import "../styles/utils/functions.scss";
-@import "../styles/utils/scrollbar.scss";
-@import "../styles/utils/elements.scss";
-/* BASE - базовый шаблон роекта
-========================================================================== */
-/* FONTS - базовый шаблон роекта
-========================================================================== */
-@import "../styles/fonts/fonts.scss";
+@charset "utf-8";
 
-@import "../styles/theme/_styles.scss";
+/* UTILS - Variables, Functions, Mixins, Placeholders, Elements, Scrollbar */
+@import "~styles/utils/_functions.scss";
+@import "~styles/utils/_mixins.scss";
+@import "~styles/utils/_placeholders.scss";
+@import "~styles/utils/_variables.scss";
+@import "~styles/utils/_elements.scss";
+@import "~styles/utils/_scrollbar.scss";
 
-body {
-    background-color: #f2f4f2;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
+/* ========================================================================== */
+
+/* BASE - Reset, Typography, Animation */
+@import "~styles/base/_reset.scss";
+@import "~styles/base/_typography.scss";
+@import "~styles/base/_animations.scss";
+
+/* ========================================================================== */
+
+/* LAYOUT - Grid */
+@import "~styles/layout/layout.scss";
+@import "~styles/layout/_grid.scss";
+
+/* ========================================================================== */
+
+/* THEME - any styles */
+@import "~styles/theme/_styles.scss";
+
+/* ========================================================================== */

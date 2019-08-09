@@ -1,8 +1,6 @@
-@import "~styles/utils/mixins.scss";
-
 *::-webkit-scrollbar {
-    @include square(8px);
-
+    width: 8px;
+    height: 8px;
     background-color: rgba(187,187,187,0.5);
 }
 

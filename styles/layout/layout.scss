@@ -1,5 +1,11 @@
-@import "~styles/utils/variables.scss";
-@import "~styles/utils/functions.scss";
+@import "./grid.scss";
+
+body {
+    background-color: #f2f4f8;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
 
 body, html, #root, .app {
     margin: 0;
