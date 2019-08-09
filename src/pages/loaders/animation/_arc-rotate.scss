@@ -1,0 +1,20 @@
+.arc-rotate .loader {
+    width: 100px;
+    height: 100px;
+}
+.arc-rotate .loader .arc {
+    position: absolute;
+    border: 2px solid;
+    border-color: transparent #00077b #00077b #00077b;
+    border-radius: 50%;
+    margin: 32% 0 0 32%;
+    width: 36%;
+    height: 36%;
+    animation: single-arc-rotate 1s infinite linear;
+}
+
+@keyframes single-arc-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}

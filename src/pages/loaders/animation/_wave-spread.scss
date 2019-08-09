@@ -1,0 +1,21 @@
+.wave-spread .loader {
+    width: 100px;
+    height: 100px;
+}
+.wave-spread .loader > div {
+    float: left;
+    margin: 40% 2% 0 0;
+    width: 4%;
+    height: 16%;
+    background-color: #00077b;
+    animation: wave 1s cubic-bezier(0.85, 0.25, 0.37, 0.85) infinite;
+}
+.wave-spread .loader .line-1 {
+    margin-left: 30%;
+}
+.wave-spread .loader .line-1, .wave-spread .loader .line-5 {
+    animation-delay: 0.4s;
+}
+.wave-spread .loader .line-2, .wave-spread .loader .line-4 {
+    animation-delay: 0.2s;
+}

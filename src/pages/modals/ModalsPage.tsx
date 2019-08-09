@@ -44,19 +44,19 @@ export class ModalsPage extends Component<{}, IModalsPageState> {
                     />
                     <Alert
                         title="Alert"
-                        type={ EAlertType.NONE }
+                        type={ EAlertType.NEGATIVE }
                         isShow={ this.state.alert_2 }
                         changeShow={ () => this.setState({ ...this.state, alert_2: false }) }
                     />
                     <Alert
                         title="Alert"
-                        type={ EAlertType.NONE }
+                        type={ EAlertType.POSITIVE }
                         isShow={ this.state.alert_3 }
                         changeShow={ () => this.setState({ ...this.state, alert_3: false }) }
                     />
                     <Alert
                         title="Alert"
-                        type={ EAlertType.NONE }
+                        type={ EAlertType.NEUTRAL }
                         isShow={ this.state.alert_4 }
                         changeShow={ () => this.setState({ ...this.state, alert_4: false }) }
                     />

@@ -1,0 +1,28 @@
+.square-rotate-3d .loader {
+    width: 100px;
+    height: 100px;
+}
+
+.square-rotate-3d .loader .square {
+    margin-top: 25%;
+    margin-left: 25%;
+    width: 50%;
+    height: 50%;
+    background-color: #00077b;
+    animation: squareRotate3d 2s infinite ease-in-out;
+}
+
+@keyframes squareRotate3d {
+    25% {
+        transform: perspective(100px) rotateX(180deg) rotateY(0);
+    }
+    50% {
+        transform: perspective(100px) rotateX(180deg) rotateY(-180deg);
+    }
+    75% {
+        transform: perspective(100px) rotateX(0) rotateY(-180deg);
+    }
+    100% {
+        transform: perspective(100px) rotateX(0) rotateY(0);
+    }
+}

@@ -9,6 +9,8 @@ import { TabsPage } from "./tabs";
 import { ModalsPage } from "./modals";
 import { AccordionsPage } from "./accordion";
 import { Redirect } from "react-router";
+import { LoadersPage } from "./loaders";
+import { TypographyPage } from "./typography";
 
 export const pages = [
 	{component: () => <MainPage />, path: `/${EPaths.MAIN}`},
@@ -18,6 +20,8 @@ export const pages = [
 	{component: () => <SwitchesPage/>, path: `/${EPaths.SWITCHES}`},
 	{component: () => <TabsPage/>, path: `/${EPaths.TAB}`},
 	{component: () => <ModalsPage/>, path: `/${EPaths.MODALS}`},
+	{component: () => <LoadersPage/>, path: `/${EPaths.LOADERS}`},
+	{component: () => <TypographyPage/>, path: `/${EPaths.TYPOGRAPHY}`},
 	{component: () => <Redirect to={`/${EPaths.MAIN}`}/>, path: ""},
 ];
 
@@ -29,4 +33,6 @@ export const links: ILink[] = [
 	{path: `/${EPaths.ACCORDION}`, label: "Аккордеоны"},
 	{path: `/${EPaths.TAB}`, label: "Вкладки"},
 	{path: `/${EPaths.MODALS}`, label: "Модальные окна"},
+	{path: `/${EPaths.LOADERS}`, label: "Прелоадеры"},
+	{path: `/${EPaths.TYPOGRAPHY}`, label: "Типография"},
 ];

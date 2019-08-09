@@ -1,5 +1,5 @@
-@import "~styles/utils/variables.scss";
-@import "~styles/utils/mixins.scss";
+@import "~styles/utils/_mixins.scss";
+@import "~styles/utils/_variables.scss";
 
 .input-field {
 
@@ -9,6 +9,8 @@
 
     .form-control {
         @include getCustomizeFieldStyle();
+
+        height: 36px;
     }
 
     input:focus + label {
@@ -42,6 +44,8 @@
         .form-control {
             padding: 10px 50px !important;
             z-index: 1;
+            width: calc(100% - 100px);
+            height: 28px;
         }
 
         .icon-before, .icon-after {
@@ -55,7 +59,7 @@
     }
 
     &[data-mini=true] {
-        min-height: 80px;
+        min-height: 84px;
 
         .form-control {
             height: 30px !important;
@@ -68,13 +72,14 @@
                 height: 30px !important;
                 min-height: 30px !important;
                 padding: 0 30px !important;
+                width: calc(100% - 60px);
             }
 
             .icon-before {
                 @include square(20px !important);
 
                 display: block;
-                margin: 5px;
+                margin: 7px;
                 background-image: url("img/search_small.svg");
                 background-size: 20px 20px;
             }

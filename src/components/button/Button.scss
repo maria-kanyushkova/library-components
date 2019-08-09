@@ -1,5 +1,4 @@
-@import "~styles/utils/variables.scss";
-@import "~styles/utils/mixins.scss";
+@import "~styles/utils/_mixins.scss";
 
 @mixin setButtonIcon($icon, $type) {
     &[data-type=#{$type}] {
@@ -10,7 +9,9 @@
 
             &:active {
                 &:before {
+                    animation: 0.25s showIcon ease-in-out;
                     background-image: url("./img/#{$icon}/#{$type}-#{$icon}-focus.svg");
+                    opacity: 1;
                 }
             }
 
@@ -35,6 +36,7 @@
     position: relative;
     text-align: left;
     transition: 0.25s ease-in-out;
+    border: 1px solid #ffffff00;
 
     &[data-type="primary"] {
         background-color: #00077B;
@@ -111,6 +113,14 @@
     &.button-tiny {
         height: 30px;
         padding: 3px 10px;
+
+        &:before {
+            @include square(20px);
+
+            background-size: 20px 20px;
+            top: 4px;
+            right: 4px;
+        }
     }
 
     &.button-mini {
@@ -118,20 +128,22 @@
 
         &.button-tiny {
             @include square(30px !important);
+
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
         }
 
         &[data-type="floating"] {
             border-radius: 50%;
         }
-    }
 
-    &.button-tiny {
         &:before {
-            @include square(20px);
-
-            background-size: 20px 20px;
-            top: 4px;
-            right: 4px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
         }
     }
 
@@ -167,11 +179,21 @@
 
         content: "";
         display: block;
-        position: absolute;
-        top: 2px;
-        right: 2px;
         background-position: center center;
         background-size: 44px 44px;
         background-repeat: no-repeat;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        margin: auto;
+    }
+}
+
+@keyframes showIcon {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
     }
 }

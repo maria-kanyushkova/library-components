@@ -7,4 +7,6 @@ export enum EPaths {
 	SWITCHES = "switches",
 	MODALS = "modals",
 	DROP_DOWN = "drop_down",
+	LOADERS = "loaders",
+	TYPOGRAPHY = "typography",
 }

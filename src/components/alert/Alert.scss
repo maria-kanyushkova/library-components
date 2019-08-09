@@ -1,5 +1,4 @@
-@import "~styles/utils/variables.scss";
-@import "~styles/utils/mixins.scss";
+@import "~styles/utils/_mixins.scss";
 
 @mixin getIconAlert($type) {
     &[data-type=#{$type}] {
@@ -22,6 +21,7 @@
 
         line-height: 24px;
         margin: auto;
+        cursor: default;
     }
 
     &[data-type="none"] {
@@ -72,6 +72,7 @@
         right: 0;
         background-repeat: no-repeat;
         background-size: 44px 44px;
+        cursor: pointer;
     }
 
     &[data-open=true] {
