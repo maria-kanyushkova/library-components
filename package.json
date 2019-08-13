@@ -1,9 +1,9 @@
 {
   "name": "@tass/components",
   "version": "1.0.0",
-  "main": "build/index.js",
-  "module": "build/index.js",
-  "typings": "build/index.d.ts",
+  "main": "build/module.js",
+  "module": "build/module.js",
+  "typings": "build/module.d.ts",
   "private": true,
   "scripts": {
     "build": "rimraf build && concurrently -n webpack, tsc \"webpack --config webpack.build.js --mode production\" \"tsc -p tsconfig.build.json\"",
