@@ -5,7 +5,7 @@ import { IField } from "../IField";
 import { getError } from "../../../utils";
 import "../Field.scss";
 import "./Toggle.scss";
-import { LabelPosition } from ".";
+import { LabelPosition } from "./LabelPosition";
 
 interface IToggleFieldProps extends IField<string> {
     labelPosition?: LabelPosition;

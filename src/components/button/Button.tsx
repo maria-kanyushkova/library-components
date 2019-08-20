@@ -3,7 +3,7 @@ import * as React from "react";
 import { FC } from "react";
 import "./Button.scss";
 import { IButtonProps } from "./IButtonProps";
-import { EButtonType } from ".";
+import { EButtonType } from "./EButtonType";
 import { isEmpty } from "lodash";
 
 export const Button: FC<IButtonProps> = (props) => {

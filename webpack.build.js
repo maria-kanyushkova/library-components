@@ -8,7 +8,7 @@ module.exports = (params, argv) => {
         },
         output: {
             path: path.resolve(__dirname, "build"),
-            filename: "module.js",
+            filename: "[name].js",
             library: "Components",
             libraryTarget: "umd",
         },

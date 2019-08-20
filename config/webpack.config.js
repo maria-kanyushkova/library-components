@@ -4,14 +4,15 @@ const webpack = require("webpack");
 const HardSourceWebpackPlugin = require("hard-source-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const PeerDepsExternalsPlugin = require("peer-deps-externals-webpack-plugin");
+const CircularDependencyPlugin = require("circular-dependency-plugin");
 
 const devServerSettings = require("./webpack/devServerSettings");
 const styleSettings = require("./webpack/styleSettings");
 
 module.exports = (params, argv) => {
     const mode = argv.mode || "development";
-    const isProduction = mode === "development";
-    const fastBuildEnabled = !!process.env.FAST_BUILD_ENABLED;
+    const isProduction = mode !== "development";
 
     const env = {
         raw: {
@@ -32,9 +33,9 @@ module.exports = (params, argv) => {
         ...(isProduction ? {} : {devtool: "eval-sourcemap"}),
         optimization: {
             minimize: isProduction,
-            removeAvailableModules: isProduction && !fastBuildEnabled,
-            removeEmptyChunks: isProduction && !fastBuildEnabled,
-            splitChunks: isProduction && !fastBuildEnabled && {},
+            removeAvailableModules: isProduction,
+            removeEmptyChunks: isProduction,
+            splitChunks: isProduction && {},
         },
         resolve: {
             extensions: [".ts", ".tsx", ".js", ".jsx"],
@@ -101,6 +102,8 @@ module.exports = (params, argv) => {
             new HardSourceWebpackPlugin(),
             new webpack.DefinePlugin(env.stringified),
             new webpack.HotModuleReplacementPlugin(),
+            new PeerDepsExternalsPlugin(),
+            new CircularDependencyPlugin(),
             !!htmlPath && new HtmlWebpackPlugin({
                 inject: true,
                 template: htmlPath

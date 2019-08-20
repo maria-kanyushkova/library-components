@@ -1,5 +1,5 @@
 {
-  "extends": "./config/tsconfig.json",
+  "extends": "./config/tsconfig.base.json",
   "compilerOptions": {
     "outDir": "build",
     "baseUrl": "src",
@@ -7,12 +7,14 @@
     "emitDeclarationOnly": true,
     "build": false,
     "composite": false,
-    "sourceMap": false,
-    "rootDirs": [
-      "src/components",
-      "src/interfaces"
-    ]
+    "sourceMap": false
   },
+  "include": [
+    "src/components",
+    "src/interfaces",
+    "src/utils",
+    "src/module.ts"
+  ],
   "exclude": [
     "node_modules",
     "build"
