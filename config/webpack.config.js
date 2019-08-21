@@ -102,8 +102,10 @@ module.exports = (params, argv) => {
             new HardSourceWebpackPlugin(),
             new webpack.DefinePlugin(env.stringified),
             new webpack.HotModuleReplacementPlugin(),
-            new PeerDepsExternalsPlugin(),
-            new CircularDependencyPlugin(),
+            isProduction && new PeerDepsExternalsPlugin(),
+            new CircularDependencyPlugin({
+                exclude: /node_modules/,
+            }),
             !!htmlPath && new HtmlWebpackPlugin({
                 inject: true,
                 template: htmlPath

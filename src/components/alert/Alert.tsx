@@ -1,6 +1,6 @@
 import * as React from "react";
 import { FC } from "react";
-import { EAlertType } from "./index";
+import { EAlertType } from "./EAlertType";
 import "./Alert.scss";
 
 interface IAlertProps {
