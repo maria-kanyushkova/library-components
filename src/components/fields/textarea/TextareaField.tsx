@@ -3,7 +3,6 @@ import { FC, Fragment } from "react";
 import { Field } from "react-final-form";
 import { IField } from "../IField";
 import { getError } from "../../../utils";
-import "../Field.scss";
 import "./TextareaField.scss";
 import { Nullable } from "../../../interfaces";
 import formatStringByPattern from "format-string-by-pattern";
@@ -51,13 +50,13 @@ export const TextareaField: FC<IField<TextareaType>> = ({
                             <Fragment>
 								<label className="field__label">{label}</label>
 								<div className="field-input-container">
-									      <textarea
-											  className={`textarea-field__input field__input input ${!!error ? "input_error" : ""}`}
-											  disabled={disabled}
-											  rows={3}
-											  {...props.input}
-											  {...{ placeholder, type }}
-										  />
+                                      <textarea
+                                          className={`textarea-field__input field__input input ${!!error ? "input_error" : ""}`}
+                                          disabled={disabled}
+                                          rows={3}
+                                          {...props.input}
+                                          {...{ placeholder, type }}
+                                      />
 								</div>
                                 <span className="field__error">{error}</span>
                             </Fragment>

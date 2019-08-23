@@ -2,7 +2,7 @@ import * as React from "react";
 import { Component, Fragment, ReactNode } from "react";
 import "../ComponentsStore.scss";
 import { FormRenderProps } from "react-final-form";
-import { CustomForm, Button, InputField, TextareaField, TextField } from "../../components";
+import { CustomForm, Button, TextareaField, TextField } from "../../components";
 
 export class FieldsPage extends Component {
 	render(): ReactNode {
@@ -173,7 +173,7 @@ export class FieldsPage extends Component {
 						/>
 					</div>
 					<div className="components-store__item">
-						<InputField
+						<TextField
 							name={"inputFieldError"}
 							label={"Input field error"}
 							placeholder={"Helper"}
