@@ -1,0 +1,18 @@
+:root {
+	--field-label-color: #808080;
+	--field-error-color: #EB5757;
+
+	// input default
+	--input-background-color: #FFFFFF;
+	--input-border-color: #D9D9D9;
+	// input hover
+	--input-hover-color: rgba(0, 7, 123, 0.4);
+	// input focus
+	--input-focus-border-color: #00077B;
+	--input-focus-color: #000000;
+	// input disable
+	--input-disable-background-color: #F2F2F2;
+	--input-disable-color: #808080;
+	// input error
+	--input-error-color: #EB5757;
+}
