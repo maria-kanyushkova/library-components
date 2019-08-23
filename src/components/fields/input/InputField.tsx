@@ -43,15 +43,15 @@ export const InputField: FC<IField<string|number>> = ({
                         const error = getError(props, type);
                         return (
                             <Fragment>
+                                <label className="form-label">{label}</label>
                                 <div>
+                                    <span className="icon-before" />
                                     <input
                                         className={`form-control ${!!error ? "form-control_error" : ""}`}
                                         disabled={disabled}
                                         {...props.input}
                                         {...{ placeholder, type }}
                                     />
-                                    <label className="form-label">{label}</label>
-                                    <span className="icon-before" />
                                     <span className="icon-after" />
                                 </div>
                                 <span className="form-text">{error}</span>

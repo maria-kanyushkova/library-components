@@ -4,8 +4,6 @@ export interface IField<Value, T extends HTMLElement = HTMLElement> extends Fiel
     label?: string;
     placeholder?: string;
     mask?: string;
-    isVisible?: boolean;
+    visible?: boolean
     disabled?: boolean;
-    icons?: boolean;
-    isMini?: boolean;
 }

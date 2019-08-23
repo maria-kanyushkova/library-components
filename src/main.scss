@@ -5,7 +5,6 @@
 @import "~styles/utils/_mixins.scss";
 @import "~styles/utils/_placeholders.scss";
 @import "~styles/utils/_variables.scss";
-@import "~styles/utils/_elements.scss";
 @import "~styles/utils/_scrollbar.scss";
 
 /* ========================================================================== */
@@ -13,8 +12,6 @@
 /* BASE - Reset, Typography, Animation */
 @import "~styles/base/_reset.scss";
 @import "~styles/base/_typography.scss";
-@import "~styles/base/_animations.scss";
-
 /* ========================================================================== */
 
 /* LAYOUT - Grid */

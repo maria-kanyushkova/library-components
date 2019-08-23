@@ -13,11 +13,6 @@
     width: $width;
 }
 
-@mixin hidden() {
-    display: none;
-    height: 0;
-}
-
 @mixin apply-hover-state() {
     cursor: pointer;
 
@@ -41,49 +36,9 @@
     background-color: $bg-color;
 }
 
-@mixin min-size() {
-    min-width: $screen-min-width;
-    min-height: $screen-min-height;
-}
-
 @mixin set-size($width: null, $height: null) {
     width: $width;
     height: $height;
-}
-
-@mixin apply-transparent-border() {
-    border-color: rgba(0, 0, 0, 0);
-}
-
-@mixin content-container($width) {
-    width: $width;
-
-    &[data-hidden="true"] {
-        transform: translateX($width);
-    }
-}
-
-@mixin underline-node($level) {
-    position: relative;
-    &:before {
-        content: "";
-        position: absolute;
-        height: 1px;
-        background-color: $border-color-light-blue;
-        bottom: 0;
-        // Hack to have full width borders always
-        left: -100vw;
-        right: 100vw;
-        width: 300vw;
-    }
-}
-
-@mixin exclude-first-node-underline() {
-    .tree-node:first-child {
-        .trigger-line.first .trigger-line__underline:before {
-            content: none;
-        }
-    }
 }
 
 @mixin set-font(
@@ -100,21 +55,6 @@
     line-height: $line-height;
     letter-spacing: $letter-spacing;
     color: $color;
-}
-
-@mixin set-font-app {
-    font-size: $font-size-medium;
-    line-height: $line-height;
-    letter-spacing: $letter-spacing-text;
-}
-
-@mixin circle-icon($img: null, $size: 40px) {
-    @include square($size: $size);
-
-    border-radius: 50%;
-    background: url($img) center center no-repeat;
-    background-color: $background-main-color;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 @mixin setFontStyle($size, $family) {

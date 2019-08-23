@@ -1,5 +1,76 @@
 @import "~styles/utils/_mixins.scss";
 
+.field {
+    margin-bottom: 10px;
+    min-height: 102px;
+    transition: 0.25s ease-in-out;
+    position: relative;
+
+    &-input-container {
+        width: 100%;
+
+        .input {
+            background: var(--input-background-color, #FFFFFF);
+            border: 2px solid var(--input-border-color, #D9D9D9);
+
+            &:hover {
+                transition: 0.25s ease-in-out;
+                border-color: var(--input-hover-color, rgba(0, 7, 123, 0.4));
+            }
+
+            &:focus {
+                border-color: var(--input-focus-border-color, #00077B);
+                outline: 0;
+                box-shadow: none;
+            }
+
+            &:disabled {
+                background: var(--input-disable-background-color, #F2F2F2);
+                border-color: var(--input-border-color, #D9D9D9);
+                color: var(--input-disable-color, #808080);
+            }
+
+            &_error {
+                border-color: var(--input-error-color, #EB5757);
+            }
+        }
+
+        input:focus + label {
+            color: var(--input-focus-color, #000000);
+        }
+    }
+
+    &__input {
+        @include setFontStyle(16px, "SFDisplay-Regular");
+
+        margin: 5px 0 0;
+        line-height: 24px;
+        border-radius: 6px;
+        padding: 0 12px;
+        width: inherit;
+        min-height: 36px;
+    }
+
+    &__label,
+    &__error {
+        @include setFontStyle(13px, "SFText-Regular");
+        line-height: 20px;
+    }
+
+    &__label {
+        color: var(--field-label-color, #808080);
+        margin-bottom: 2px;
+        transition: 0.25s ease-in-out;
+    }
+
+    &__error {
+        @include setFontStyle(13px, "SFText-Regular");
+
+        color: var(--field-error-color, #EB5757);
+        margin: 0;
+    }
+}
+
 .form-group {
     margin-bottom: 10px;
     min-height: 102px;
@@ -23,8 +94,8 @@
         color: #000000;
         line-height: 24px;
         margin: 24px 0 6px;
-        border-radius: 6px !important;
-        width: calc(100% - 26px);
+        border-radius: 6px;
+        width: 100%;
     }
 
     .form-text {
@@ -41,34 +112,5 @@
 
     input, select {
         min-height: 28px;
-    }
-}
-
-.multiSelect-field {
-    .multi-value-container {
-        background-color: rgb(230, 230, 230);
-        display: flex;
-        min-width: 0;
-        border-radius: 11px;
-        margin: 2px 8px 2px 2px;
-
-        > div {
-            &:first-child {
-                padding: 2px 5px 4px 10px;;
-            }
-
-            &:last-child {
-                @include square(24px);
-
-                padding: 0 5px;
-                background-color: rgb(210, 210, 210);
-                border-radius: 11px;
-                transition: 0.25s;
-
-                &:hover {
-                    background-color: rgb(255, 165, 165);
-                }
-            }
-        }
     }
 }
