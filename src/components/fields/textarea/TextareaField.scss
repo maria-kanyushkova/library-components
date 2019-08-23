@@ -1,25 +1,13 @@
 @import "~styles/utils/_mixins.scss";
-@import "~styles/utils/_variables.scss";
 
-.textarea-container {
+.textarea-field {
     textarea {
         resize: none;
     }
 
-    .form-text {
-        height: 21px;
-    }
-
-    .form-control {
-        @include getCustomizeFieldStyle();
-
+    &__input {
         height: auto;
-        padding: 13px 15px;
-        max-height: 250px !important;
-        overflow-y: auto !important;
-    }
-
-    textarea:focus + label {
-        color: $grey-0;
+        max-height: 250px;
+        overflow-y: auto;
     }
 }
