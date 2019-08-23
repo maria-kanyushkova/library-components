@@ -8,10 +8,10 @@ import "./Checkbox.scss";
 
 export const CheckboxField: FC<IField<string>> = (props) => {
     const {
-        name, label, isVisible = true, disabled = false, type, ...rest
+        name, label, visible = true, disabled = false, type, ...rest
     } = props;
     return (
-        <div className="form-group checkbox-field" data-visible={isVisible}>
+        <div className="form-group checkbox-field" data-visible={visible}>
             <Field
                 name={name}
                 type="checkbox"

@@ -3,7 +3,6 @@ import { FC, Fragment } from "react";
 import { Field } from "react-final-form";
 import { IField } from "../IField";
 import { getError } from "../../../utils";
-import "../Field.scss";
 import "./TextareaField.scss";
 import { Nullable } from "../../../interfaces";
 import formatStringByPattern from "format-string-by-pattern";
@@ -13,7 +12,7 @@ type TextareaType = string;
 
 export const TextareaField: FC<IField<TextareaType>> = ({
     name, label, placeholder, mask, type, validate,
-    isVisible = true, disabled = false, ...rest
+    visible = true, disabled = false, ...rest
                                           }) => {
     const validateField = (value: TextareaType, allValues: object): Nullable<TextareaType> => {
         if (validate) {
@@ -27,8 +26,12 @@ export const TextareaField: FC<IField<TextareaType>> = ({
         autosize(field);
     }
 
+    if (!visible) {
+        return null;
+    }
+
     return (
-        <div className="form-group textarea-container" data-visible={isVisible}>
+        <div className="field textarea-field">
             <Field
                 name={name}
                 validate={validateField}
@@ -45,15 +48,17 @@ export const TextareaField: FC<IField<TextareaType>> = ({
                         const error = getError(props, type);
                         return (
                             <Fragment>
-                                <textarea
-                                    className={`form-control ${!!error ? "form-control_error" : ""}`}
-                                    disabled={disabled}
-                                    rows={3}
-                                    {...props.input}
-                                    {...{ placeholder, type }}
-                                />
-                                <label className="form-label">{label}</label>
-                                <span className="form-text">{error}</span>
+								<label className="field__label">{label}</label>
+								<div className="field-input-container">
+                                      <textarea
+                                          className={`textarea-field__input field__input input ${!!error ? "input_error" : ""}`}
+                                          disabled={disabled}
+                                          rows={3}
+                                          {...props.input}
+                                          {...{ placeholder, type }}
+                                      />
+								</div>
+                                <span className="field__error">{error}</span>
                             </Fragment>
                         );
                     }

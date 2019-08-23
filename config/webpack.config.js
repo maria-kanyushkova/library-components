@@ -41,7 +41,7 @@ module.exports = (params, argv) => {
             extensions: [".ts", ".tsx", ".js", ".jsx"],
             modules: ["node_modules", "src", "styles"],
             alias: {
-                "styles": path.resolve(__dirname, "../styles")
+                "styles": path.resolve(__dirname, "../src/styles"),
             }
         },
         module: {
@@ -77,7 +77,7 @@ module.exports = (params, argv) => {
                         {
                             loader: "file-loader",
                             options: {
-                                outputPath: "assets"
+                                outputPath: "assets/images"
                             }
                         },
                         {
@@ -91,7 +91,11 @@ module.exports = (params, argv) => {
                 styleSettings(),
                 {
                     test: /\.(woff|woff2|eot|ttf|otf)$/,
-                    loader: 'file-loader'
+                    loader: 'file-loader',
+                    options: {
+                        outputPath: "assets/fonts"
+                    }
+
                 }
             ],
         },
