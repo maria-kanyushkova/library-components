@@ -9,10 +9,10 @@ import "./Radio.scss";
 export const RadioField: FC<IField<string>> = (props) => {
     const {
         name, label, type,
-        isVisible = true, disabled = false, ...rest
+        visible = true, disabled = false, ...rest
     } = props;
     return (
-        <div className="form-group radio-field" data-visible={isVisible}>
+        <div className="form-group radio-field" data-visible={visible}>
             <Field
                 name={name}
                 type="radio"
