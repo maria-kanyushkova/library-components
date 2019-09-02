@@ -24,7 +24,7 @@
     }
 }
 
-.custom-button {
+.button {
     @include setFontStyle(16px, "SFDisplay-Medium");
 
     line-height: 24px;
@@ -147,17 +147,32 @@
         }
     }
 
-    &[data-double=true] {
+    &.button-double {
         &:first-child {
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
         }
+
         &:last-child {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
         }
     }
 
+    &:before {
+        @include square(44px);
+
+        content: "";
+        display: block;
+        background-position: center center;
+        background-size: 44px 44px;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        margin: auto;
+        opacity: 0.75;
+    }
 
     @include setButtonIcon("plus", "primary");
     @include setButtonIcon("plus", "secondary");
@@ -173,25 +188,11 @@
     @include setButtonIcon("arrow-right", "primary");
     @include setButtonIcon("arrow-left", "primary");
     @include setButtonIcon("arrow-top", "floating");
-
-    &:before {
-        @include square(44px);
-
-        content: "";
-        display: block;
-        background-position: center center;
-        background-size: 44px 44px;
-        background-repeat: no-repeat;
-        position: absolute;
-        top: 2px;
-        right: 2px;
-        margin: auto;
-    }
 }
 
 @keyframes showIcon {
     from {
-        opacity: 0.5;
+        opacity: 0.75;
     }
     to {
         opacity: 1;
