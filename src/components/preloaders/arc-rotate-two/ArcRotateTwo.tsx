@@ -1,11 +1,11 @@
 import * as React from "react";
-import { LoaderWrapper } from "../LoaderWrapper";
+import { LoaderWrap } from "../LoaderWrap";
 import "./ArcRotateTwo.css";
 
 export const ArcRotateTwo = () => {
     return (
-        <LoaderWrapper className="arc-rotate-two">
+        <LoaderWrap className="arc-rotate-two">
             <div className="arc"/>
-        </LoaderWrapper>
+        </LoaderWrap>
     );
 };

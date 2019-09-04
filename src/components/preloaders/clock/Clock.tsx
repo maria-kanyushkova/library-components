@@ -1,11 +1,11 @@
 import * as React from "react";
-import { LoaderWrapper } from "../LoaderWrapper";
+import { LoaderWrap } from "../LoaderWrap";
 import "./Clock.css";
 
 export const Clock = () => {
     return (
-        <LoaderWrapper className="clock">
+        <LoaderWrap className="clock">
             <div className="arc"/>
-        </LoaderWrapper>
+        </LoaderWrap>
     );
 };

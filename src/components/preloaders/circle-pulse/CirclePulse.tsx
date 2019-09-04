@@ -1,11 +1,11 @@
 import * as React from "react";
-import { LoaderWrapper } from "../LoaderWrapper";
+import { LoaderWrap } from "../LoaderWrap";
 import "./CirclePulse.css";
 
 export const CirclePulse = () => {
     return (
-        <LoaderWrapper className="circle-pulse">
+        <LoaderWrap className="circle-pulse">
             <div className="circle"/>
-        </LoaderWrapper>
+        </LoaderWrap>
     );
 };

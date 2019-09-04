@@ -1,15 +1,3 @@
-.loaders {
-    &::before, &::after {
-        content: "";
-        display: block;
-    }
-
-    &::after {
-        clear: both;
-        overflow: hidden;
-    }
-}
-
 .loader-container {
     position: relative;
     float: left;
@@ -23,5 +11,15 @@
         right: 0;
         bottom: 0;
         margin: auto;
+    }
+
+    &::before, &::after {
+        content: "";
+        display: block;
+    }
+
+    &::after {
+        clear: both;
+        overflow: hidden;
     }
 }

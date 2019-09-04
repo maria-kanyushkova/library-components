@@ -1,11 +1,11 @@
 import * as React from "react";
-import { LoaderWrapper } from "../LoaderWrapper";
+import { LoaderWrap } from "../LoaderWrap";
 import "./SquareRotate.css";
 
 export const SquareRotate = () => {
     return (
-        <LoaderWrapper className="square-rotate">
+        <LoaderWrap className="square-rotate">
             <div className="square"/>
-        </LoaderWrapper>
+        </LoaderWrap>
     );
 };
