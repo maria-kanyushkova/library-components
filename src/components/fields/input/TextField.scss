@@ -1,31 +1,31 @@
 @import "~styles/utils/_mixins.scss";
 
 .text-field {
-	&__icon {
-		$text-field-icon-size: 44px;
+    &__icon {
+        $text-field-icon-size: 44px;
 
-		@include square($text-field-icon-size);
+        @include square($text-field-icon-size);
 
-		margin: 3px;
-		background-size: $text-field-icon-size;
-		background-repeat: no-repeat;
-		z-index: 2;
+        margin: 3px;
+        background-size: $text-field-icon-size;
+        background-repeat: no-repeat;
+        z-index: 2;
 
-		&_before {
-			left: 0;
-		}
+        &_before {
+            left: 0;
+        }
 
-		&_after {
-			right: 0;
-		}
-	}
+        &_after {
+            right: 0;
+        }
+    }
 
-	&[data-mini=true] {
-		min-height: 84px;
+    &[data-mini=true] {
+        min-height: 84px;
 
-		.text-field__input {
-			height: 30px;
-			min-height: 30px;
-		}
-	}
+        .text-field__input {
+            height: 30px;
+            min-height: 30px;
+        }
+    }
 }

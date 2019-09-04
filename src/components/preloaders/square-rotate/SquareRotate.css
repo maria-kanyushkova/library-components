@@ -1,9 +1,9 @@
-.square-rotate-3d .loader {
+.square-rotate .loader {
     width: 100px;
     height: 100px;
 }
 
-.square-rotate-3d .loader .square {
+.square-rotate .loader .square {
     margin-top: 25%;
     margin-left: 25%;
     width: 50%;

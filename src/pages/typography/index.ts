@@ -1,1 +1,1 @@
-export { TypographyPage } from "./TypographyPage";
+export * from "./TypographyPage";

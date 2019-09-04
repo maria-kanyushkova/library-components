@@ -5,10 +5,10 @@ import { Alert, EAlertType } from "../../components/alert";
 import { Button } from "../../components/button";
 
 interface IModalsPageState {
-    alert_1: boolean,
-    alert_2: boolean,
-    alert_3: boolean,
-    alert_4: boolean,
+    alert_1: boolean;
+    alert_2: boolean;
+    alert_3: boolean;
+    alert_4: boolean;
 }
 
 export class ModalsPage extends Component<{}, IModalsPageState> {

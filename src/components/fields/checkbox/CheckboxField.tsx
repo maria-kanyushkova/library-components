@@ -11,28 +11,28 @@ export const CheckboxField: FC<IField<string>> = (props) => {
         name, label, visible = true, disabled = false, type, ...rest
     } = props;
     return (
-        <div className="form-group checkbox-field" data-visible={visible}>
+        <div className="form-group checkbox-field" data-visible={ visible }>
             <Field
-                name={name}
+                name={ name }
                 type="checkbox"
-                {...rest}
+                { ...rest }
             >
                 {
                     (fieldProps) => {
                         const error = getError(fieldProps, type);
                         return (
                             <Fragment>
-                                    <span className="checkbox" data-disable={disabled}>
-                                        <input
-                                            className="form-control"
-                                            type="checkbox"
-                                            disabled={disabled}
-                                            {...fieldProps.input}
-                                        />
-                                        <div className="checkbox__item"/>
-                                        <div className="checkbox-label" data-show={!!label}>{label}</div>
-                                    </span>
-                                <span className="form-text text-danger">{error}</span>
+                                <span className="checkbox" data-disable={ disabled }>
+                                    <input
+                                        className="form-control"
+                                        type="checkbox"
+                                        disabled={ disabled }
+                                        { ...fieldProps.input }
+                                    />
+                                    <div className="checkbox__item"/>
+                                    <div className="checkbox-label" data-show={ !!label }>{ label }</div>
+                                </span>
+                                <span className="form-text text-danger">{ error }</span>
                             </Fragment>
                         );
                     }

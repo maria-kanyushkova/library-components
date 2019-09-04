@@ -7,7 +7,8 @@ interface IAlertProps {
     title: string;
     type: EAlertType;
     isShow: boolean;
-    changeShow: () => void;
+
+    changeShow(): void;
 }
 
 export const Alert: FC<IAlertProps> = ({
@@ -17,7 +18,7 @@ export const Alert: FC<IAlertProps> = ({
                                            changeShow
                                        }) => {
     return (
-        <div className="custom-alert" data-open={ isShow } data-type={ type } onClick={ changeShow }>
+        <div className="alert" data-open={ isShow } data-type={ type } onClick={ changeShow }>
             <span>{ title }</span>
         </div>
     );
