@@ -7,6 +7,7 @@ interface IAlertProps {
     title: string;
     type: EAlertType;
     isShow: boolean;
+
     changeShow(): void;
 }
 

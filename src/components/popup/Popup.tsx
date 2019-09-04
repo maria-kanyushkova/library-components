@@ -6,7 +6,11 @@ import { isNull } from "lodash";
 @autobind
 export class Popup {
     private state = false;
-    private view = new PopupView({popup: this, close: this.hide, title: "Some title"});
+    private view = new PopupView({ popup: this, close: this.hide, title: "Some title" });
+
+    static build(props: object): Popup {
+        return new Popup();
+    }
 
     show(): void {
         this.state = true;
@@ -30,9 +34,5 @@ export class Popup {
             return ReactDOM.createPortal(this.view.render(), document.body);
         }
         return void 0;
-    }
-
-    static build(props: object): Popup {
-        return new Popup();
     }
 }

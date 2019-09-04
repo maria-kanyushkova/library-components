@@ -1,10 +1,10 @@
 import * as React from "react";
-import { Component, ReactNode, Fragment } from "react";
+import { Component, Fragment, ReactNode } from "react";
 import { Form, FormRenderProps } from "react-final-form";
 import { FormApi, FormState } from "final-form";
-import { FieldErrors, Nullable, IError, IFieldError } from "../../interfaces";
+import { FieldErrors, IError, IFieldError, Nullable } from "../../interfaces";
 import { autobind } from "core-decorators";
-import { isEmpty, isObject, merge, stubObject, values, toLower, set, get } from "lodash";
+import { get, isEmpty, isObject, merge, set, stubObject, toLower, values } from "lodash";
 import { Subject } from "rxjs";
 import EventListener from "react-event-listener";
 import { getFieldErrorByCode } from "../../utils";
@@ -30,43 +30,43 @@ export class CustomForm<T> extends Component<ICustomFormProps<T>> {
     private errors: Nullable<object> = void 0;
 
     componentDidMount(): void {
-        const {error$} = this.props;
+        const { error$ } = this.props;
         if (error$) {
             error$.subscribe(this.setError);
         }
     }
 
     componentWillUnmount(): void {
-        const {error$} = this.props;
+        const { error$ } = this.props;
         if (error$) {
             error$.unsubscribe();
         }
     }
 
     render(): ReactNode {
-        const {render, data, validateOnBlur, keepDirtyOnReinitialize = true} = this.props;
+        const { render, data, validateOnBlur, keepDirtyOnReinitialize = true } = this.props;
 
         return (
             <Form
-                onSubmit={this.onSubmit}
-                validate={this.onValidate}
-                initialValues={data || stubObject()}
-                render={(api: FormRenderProps<T>) => {
+                onSubmit={ this.onSubmit }
+                validate={ this.onValidate }
+                initialValues={ data || stubObject() }
+                render={ (api: FormRenderProps<T>) => {
                     return (
                         <Fragment>
-                            {render(api, this.submitting(api.form.getState()))}
-                            <EventListener target={document} onKeyPress={this.onKeyPress.bind(this, api)}/>
+                            { render(api, this.submitting(api.form.getState())) }
+                            <EventListener target={ document } onKeyPress={ this.onKeyPress.bind(this, api) }/>
                         </Fragment>
                     );
-                }}
-                {...{validateOnBlur, keepDirtyOnReinitialize}}
+                } }
+                { ...{ validateOnBlur, keepDirtyOnReinitialize } }
             />
         );
     }
 
     private onSubmit(formData: T, form: FormApi<T>, callback?: (errors?: object) => void):
         Promise<Nullable<object>> | object | void {
-        const {submit} = this.props;
+        const { submit } = this.props;
         return new Promise((resolve) => resolve(formData)).then(async (data) => {
             return submit(data as T, form);
         }).catch((err) => {
@@ -79,7 +79,7 @@ export class CustomForm<T> extends Component<ICustomFormProps<T>> {
 
     private onValidate(formData: T): object | Promise<object> {
         let errors = {};
-        const {validate, validateData} = this.props;
+        const { validate, validateData } = this.props;
         const requiredFields = validateData && validateData(formData) || [];
         for (const field of requiredFields) {
             const value = get(formData, field.type);
@@ -108,7 +108,7 @@ export class CustomForm<T> extends Component<ICustomFormProps<T>> {
     }
 
     private setError(error: IError): void {
-        const {validateData, data} = this.props;
+        const { validateData, data } = this.props;
         const requiredFields = validateData && validateData(data as unknown as T);
         const fieldTypes = FieldErrors.getTypesByCode(error.code || error.status, requiredFields);
         const errors = {};
@@ -119,7 +119,7 @@ export class CustomForm<T> extends Component<ICustomFormProps<T>> {
     }
 
     private onKeyPress(api: FormRenderProps<T>, event: KeyboardEvent): void {
-        if (toLower(event.code ) !== "enter") {
+        if (toLower(event.code) !== "enter") {
             return;
         }
         if (api.active) {

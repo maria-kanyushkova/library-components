@@ -1,10 +1,10 @@
 import { FieldErrors } from "../interfaces";
-import * as _ from "lodash";
 import { FieldRenderProps } from "react-final-form";
+import { isNumber, isEmpty } from "lodash";
 
 function isEmptyField(value: string | number): boolean {
-    const currentValue = _.isNumber(value) ? value.toString() : value;
-    return _.isEmpty(currentValue);
+    const currentValue = isNumber(value) ? value.toString() : value;
+    return isEmpty(currentValue);
 }
 
 export function getFieldErrorByCode<T>(codes: number[], value: string | number): string {

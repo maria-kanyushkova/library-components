@@ -1,4 +1,3 @@
-
 import { Component } from "react";
 
 export type TNullableTypes = Component | HTMLElement;

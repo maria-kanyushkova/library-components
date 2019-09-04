@@ -5,8 +5,8 @@ import { IFieldError } from "./IFieldError";
 // tslint:disable-next-line:no-unnecessary-class
 export class FieldErrors {
     private static readonly errors = [
-        { type: EFormTypes.EMAIL, codes: [ 15, 16] },
-        { type: EFormTypes.PASSWORD, codes: [ 14, 19, 20] },
+        { type: EFormTypes.EMAIL, codes: [ 15, 16 ] },
+        { type: EFormTypes.PASSWORD, codes: [ 14, 19, 20 ] },
     ];
 
     static getTypesByCode(code: number, errors?: IFieldError[]): Array<EFormTypes | string> {
@@ -17,7 +17,7 @@ export class FieldErrors {
             }
             types.push(value.type);
         });
-        return types.length ? types : [EFormTypes.TEXT];
+        return types.length ? types : [ EFormTypes.TEXT ];
     }
 
     // TODO: should get error message from other file
