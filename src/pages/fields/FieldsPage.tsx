@@ -3,6 +3,8 @@ import { Component, Fragment, ReactNode } from "react";
 import "../ComponentsStore.scss";
 import { FormRenderProps } from "react-final-form";
 import { CustomForm, Button, TextareaField, TextField } from "../../components";
+import { keys, reduce } from "lodash";
+import set = Reflect.set;
 
 export class FieldsPage extends Component {
 	render(): ReactNode {
@@ -26,14 +28,20 @@ export class FieldsPage extends Component {
 						textareaFieldWithValue: "Value",
 						textareaFieldDisabledWithValue: "Value",
 					}}
-					validateData={() => [
-						{type: "inputFieldError", codes: []},
-						{type: "inputFieldErrorWithIcons", codes: []},
-						{type: "inputFieldErrorSmall", codes: []},
-						{type: "inputFieldErrorWithIconsSmall", codes: []},
-
-						{type: "textareaFieldError", codes: []},
-					]}
+					validate={(values) => {
+						const currentKeys = [
+							"inputFieldError",
+							"inputFieldErrorWithIcons",
+							"inputFieldErrorSmall",
+							"inputFieldErrorWithIconsSmall",
+							"textareaFieldError"
+						];
+						return reduce(keys(values), (obj, key) => {
+							const value = currentKeys.includes(key) ? "required" : void 0;
+							set(obj, key, value);
+							return obj;
+						}, {});
+					}}
 					render={this.renderForm}
 				/>
 			</div>
