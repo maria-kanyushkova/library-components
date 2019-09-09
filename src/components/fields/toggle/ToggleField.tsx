@@ -8,50 +8,50 @@ import "./Toggle.scss";
 import { LabelPosition } from "./LabelPosition";
 
 interface IToggleFieldProps extends IField<string> {
-	labelPosition?: LabelPosition;
-	isSwitchLabel?: boolean;
+    labelPosition?: LabelPosition;
+    isSwitchLabel?: boolean;
 }
 
 export const ToggleField: FC<IToggleFieldProps> = ({
-													   name, label, placeholder, mask, type, validate,
-													   visible = true, disabled = false, isSwitchLabel = false,
+                                                       name, label, placeholder, mask, type, validate,
+                                                       visible = true, disabled = false, isSwitchLabel = false,
                                                        labelPosition = LabelPosition.LEFT, ...rest
-												   }) => {
-	return (
-		<div className="form-group" data-visible={visible}>
-			<Field
-				name={name}
-				type="checkbox"
-				{...rest}
-			>
-				{
-					(props) => {
-						const error = getError(props, type);
-						return (
-							<Fragment>
-								<div className="toggle-field">
-									<div className="toggle__value" data-show={labelPosition === LabelPosition.LEFT}>
-										{isSwitchLabel ? label : props.input.value ? "Вкл." : "Выкл."}
-									</div>
-									<span className="toggle" data-disable={disabled}>
+                                                   }) => {
+    return (
+        <div className="form-group" data-visible={ visible }>
+            <Field
+                name={ name }
+                type="checkbox"
+                { ...rest }
+            >
+                {
+                    (props) => {
+                        const error = getError(props, type);
+                        return (
+                            <Fragment>
+                                <div className="toggle-field">
+                                    <div className="toggle__value" data-show={ labelPosition === LabelPosition.LEFT }>
+                                        { isSwitchLabel ? label : props.input.value ? "Вкл." : "Выкл." }
+                                    </div>
+                                    <span className="toggle" data-disable={ disabled }>
                                         <input
-											type="checkbox"
-											className="form-control"
-											disabled={disabled}
-											{...props.input}
-										/>
+                                            type="checkbox"
+                                            className="form-control"
+                                            disabled={ disabled }
+                                            { ...props.input }
+                                        />
                                         <div className="toggle__item"/>
                                     </span>
-									<div className="toggle__value" data-show={labelPosition === LabelPosition.RIGHT}>
-										{label}
-									</div>
-								</div>
-								<span className="form-text text-danger">{error}</span>
-							</Fragment>
-						);
-					}
-				}
-			</Field>
-		</div>
-	);
+                                    <div className="toggle__value" data-show={ labelPosition === LabelPosition.RIGHT }>
+                                        { label }
+                                    </div>
+                                </div>
+                                <span className="form-text text-danger">{ error }</span>
+                            </Fragment>
+                        );
+                    }
+                }
+            </Field>
+        </div>
+    );
 };

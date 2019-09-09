@@ -1,1 +1,1 @@
-export { LoadersPage } from "./LoadersPage";
+export * from "./LoadersPage";

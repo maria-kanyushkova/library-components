@@ -1,10 +1,10 @@
-import { FC } from "react";
 import * as React from "react";
+import { FC } from "react";
 
 export const MainPage: FC = () => {
-	return (
-		<div>
-			Библиотека компонентов
-		</div>
-	);
+    return (
+        <div>
+            Библиотека компонентов
+        </div>
+    );
 };

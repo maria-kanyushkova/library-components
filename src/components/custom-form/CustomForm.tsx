@@ -1,13 +1,10 @@
 import * as React from "react";
-import { Component, ReactNode, Fragment } from "react";
+import { Fragment, ReactNode } from "react";
 import { Form, FormRenderProps } from "react-final-form";
 import { FormApi, FormState, ValidationErrors } from "final-form";
-import { FieldErrors, Nullable, IError, IFieldError } from "../../interfaces";
-import { autobind } from "core-decorators";
-import { isEmpty, isObject, merge, stubObject, values, toLower, set, get } from "lodash";
-import { Subject } from "rxjs";
+import { Nullable } from "../../interfaces";
+import { isEmpty, isObject, stubObject, toLower, values } from "lodash";
 import EventListener from "react-event-listener";
-import { getFieldErrorByCode } from "../../utils";
 
 interface ICustomFormProps<T> {
 	data?: T | Partial<T>;

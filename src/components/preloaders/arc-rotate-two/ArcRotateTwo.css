@@ -1,13 +1,13 @@
-.arc-rotate2 .loader {
+.arc-rotate-two .loader {
     width: 100px;
     height: 100px;
 }
-.arc-rotate2 .loader .arc {
+.arc-rotate-two .loader .arc {
     position: absolute;
     width: 100%;
     height: 100%;
 }
-.arc-rotate2 .loader .arc::before, .arc-rotate2 .loader .arc::after {
+.arc-rotate-two .loader .arc::before, .arc-rotate-two .loader .arc::after {
     content: "";
     position: absolute;
     top: 32%;
@@ -17,11 +17,11 @@
     width: 36%;
     height: 36%;
 }
-.arc-rotate2 .loader .arc::before {
+.arc-rotate-two .loader .arc::before {
     border-color: #00077b;
     opacity: 0.3;
 }
-.arc-rotate2 .loader .arc::after {
+.arc-rotate-two .loader .arc::after {
     border-color: transparent;
     border-bottom-color: #00077b;
     animation: rotate 1s infinite linear;
