@@ -28,31 +28,31 @@
         background-color: rgba(41, 45, 64, 0.9);
 
         > span {
-            color: #ffffff;
+            color: var(--gray-6-color);
         }
     }
 
     &[data-type="negative"] {
-        background-color: #FFE6E6;
+        background-color: var(--light-red-color);
 
         > span {
-            color: #EB5757;
+            color: var(--red-color);
         }
     }
 
     &[data-type="positive"] {
-        background-color: #DAF7E4;
+        background-color: var(--light-green-color);
 
         > span {
-            color: #00BF40;
+            color: var(--green-color);
         }
     }
 
     &[data-type="neutral"] {
-        background-color: #E4EAF7;
+        background-color: var(--light-blue-color);
 
         > span {
-            color: #00077B;
+            color: var(--blue-color);
         }
     }
 

@@ -10,7 +10,7 @@
         height: 54px;
         display: grid;
         grid-template-columns: 54px auto 150px;
-        background-color: #ffffff;
+        background-color: var(--gray-6-color);
 
         &__indicator {
             @include square(44px);
@@ -40,7 +40,7 @@
             @include setFontStyle(16px, "SFDisplay-Medium");
 
             line-height: 55px;
-            color: #000000;
+            color: var(--gray-0-color);
             cursor: default;
         }
 

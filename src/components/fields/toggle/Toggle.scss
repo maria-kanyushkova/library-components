@@ -13,7 +13,7 @@
             @include setFontStyle(13px, "SFText-Regular");
 
             line-height: 21px;
-            color: #000000;
+            color: var(--gray-0-color);
             margin-right: 7px;
             width: 36px;
             text-align: right;
@@ -30,7 +30,7 @@
 
         &[data-disable="true"] {
             .toggle__item:before {
-                background-color: #e6e6e6 !important;
+                background-color: var(--gray-4-color) !important;
             }
 
             .form-control {
@@ -56,7 +56,7 @@
             display: block;
             position: absolute;
             border-radius: 3px;
-            background-color: #ffffff;
+            background-color: var(--gray-6-color);
             -webkit-transition: all ease-out 0.25s;
             transition: all ease-out 0.25s;
             top: 0;
@@ -77,11 +77,11 @@
             height: 20px;
             left: 0;
             top: 0;
-            background-color: #A6A6A6;
+            background-color: var(--gray-2-color);
         }
 
         input[type="checkbox"]:checked + .toggle__item:before {
-            background-color: #00077B;
+            background-color: var(--blue-color);
         }
     }
 }

@@ -13,29 +13,29 @@
 
         input:hover + .radio__item:before {
             transition: 0.25s ease-in-out;
-            background: #E4EAF7 !important;
+            background: var(--light-blue-color) !important;
         }
 
         &[data-disable="true"] {
             input:hover ~ .radio__item:before {
                 transition: 0.25s ease-in-out;
-                background: #F2F2F2 !important;
-                border: 1px solid #D9D9D9 !important;
+                background: var(--gray-5-color) !important;
+                border: 1px solid var(--gray-3-color) !important;
             }
 
             .radio__item:before {
-                background: #F2F2F2 !important;
-                border: 1px solid #D9D9D9 !important;
+                background: var(--gray-5-color) !important;
+                border: 1px solid var(--gray-3-color) !important;
             }
 
             input:checked ~ .radio__item:before {
-                background: #F2F2F2 !important;
-                border: 2px solid #A6A6A6 !important;
+                background: var(--gray-5-color) !important;
+                border: 2px solid var(--gray-2-color) !important;
             }
 
 
             input:checked ~ .radio__item:after {
-                background: #A6A6A6 !important;
+                background: var(--gray-2-color) !important;
             }
 
             .form-control {
@@ -50,7 +50,7 @@
             @include setFontStyle(13px, "SFText-Medium");
 
             line-height: 20px;
-            color: #000000;
+            color: var(--gray-0-color);
             display: none;
             margin-left: 30px;
 
@@ -85,7 +85,7 @@
         }
 
         input[type="radio"]:checked + .radio__item:after {
-            background-color: #00077B;
+            background-color: var(--blue-color);
         }
 
         input[type="radio"] + .radio__item:before {
@@ -100,14 +100,14 @@
             right: 0;
             margin: auto;
             border-radius: 50%;
-            border: 1px solid #D9D9D9;
+            border: 1px solid var(--gray-3-color);
             background-color: #ffffff;
         }
 
         input[type="radio"]:checked + .radio__item:before {
             @include square(16px);
 
-            border: 2px solid #00077B;
+            border: 2px solid var(--blue-color);
         }
     }
 }

@@ -80,7 +80,7 @@
     .form-label {
         @include setFontStyle(13px, "SFText-Regular");
 
-        color: #808080;
+        color: var(--gray-1-color);
         line-height: 20px;
         margin-bottom: 2px;
         position: absolute;
@@ -91,7 +91,7 @@
     .form-control {
         @include setFontStyle(16px, "SFDisplay-Regular");
 
-        color: #000000;
+        color: var(--gray-0-color);
         line-height: 24px;
         margin: 24px 0 6px;
         border-radius: 6px;
@@ -101,7 +101,7 @@
     .form-text {
         @include setFontStyle(13px, "SFText-Regular");
 
-        color: #EB5757;
+        color: var(--red-color);
         line-height: 20px;
         margin: 0;
     }

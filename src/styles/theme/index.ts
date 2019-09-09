@@ -1,1 +1,2 @@
-import "./field.scss"
+import "./field.scss";
+import "./theme.scss"
