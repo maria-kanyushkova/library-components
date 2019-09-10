@@ -1,0 +1,44 @@
+.modal {
+  &__layout {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    &--visible {
+      display: flex;
+
+      .modal__overlay {
+        background: #000000;
+        opacity: 0.8;
+      }
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__view {
+    background: #ffffff;
+    z-index: 1100;
+    padding: 24px;
+    min-width: 320px;
+    min-height: 240px;
+  }
+
+  &__overlay {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    opacity: 0;
+  }
+}

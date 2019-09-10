@@ -5,6 +5,7 @@ export * from "./fields";
 export * from "./modals";
 export * from "./switches";
 export * from "./tabs";
+export * from "./modal";
 export * from "./pageHelper";
 export * from "./loaders";
 export * from "./typography";
