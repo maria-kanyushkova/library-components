@@ -3,6 +3,7 @@ import { Component, Fragment, ReactNode } from "react";
 import "../ComponentsStore.scss";
 import { FormRenderProps } from "react-final-form";
 import { Button, CustomForm, TextareaField, TextField } from "../../components";
+import { keys, reduce, set } from "lodash";
 import { SelectField } from "../../components/fields/Select";
 
 const options = [
@@ -36,16 +37,21 @@ export class FieldsPage extends Component {
                         selectFieldWithValue: options[2],
                         selectFieldDisabledWithValue: options[2],
                     } }
-                    validateData={ () => [
-                        { type: "inputFieldError", codes: [] },
-                        { type: "inputFieldErrorWithIcons", codes: [] },
-                        { type: "inputFieldErrorSmall", codes: [] },
-                        { type: "inputFieldErrorWithIconsSmall", codes: [] },
-
-                        { type: "textareaFieldError", codes: [] },
-
-                        { type: "selectFieldError", codes: [] },
-                    ] }
+                    validate={(values) => {
+						const currentKeys = [
+							"inputFieldError",
+							"inputFieldErrorWithIcons",
+							"inputFieldErrorSmall",
+							"inputFieldErrorWithIconsSmall",
+							"textareaFieldError",
+                            "selectFieldError"
+						];
+						return reduce(keys(values), (obj, key) => {
+							const value = currentKeys.includes(key) ? "required" : void 0;
+							set(obj, key, value);
+							return obj;
+						}, {});
+                    } }
                     render={ this.renderForm }
                 />
             </div>
