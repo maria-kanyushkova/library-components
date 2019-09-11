@@ -3,6 +3,13 @@ import { Component, Fragment, ReactNode } from "react";
 import "../ComponentsStore.scss";
 import { FormRenderProps } from "react-final-form";
 import { Button, CustomForm, TextareaField, TextField } from "../../components";
+import { SelectField } from "../../components/fields/Select";
+
+const options = [
+    { value: "chocolate", label: "Chocolate" },
+    { value: "strawberry", label: "Strawberry" },
+    { value: "vanilla", label: "Vanilla" }
+];
 
 export class FieldsPage extends Component {
     render(): ReactNode {
@@ -25,6 +32,9 @@ export class FieldsPage extends Component {
 
                         textareaFieldWithValue: "Value",
                         textareaFieldDisabledWithValue: "Value",
+
+                        selectFieldWithValue: options[2],
+                        selectFieldDisabledWithValue: options[2],
                     } }
                     validateData={ () => [
                         { type: "inputFieldError", codes: [] },
@@ -33,6 +43,8 @@ export class FieldsPage extends Component {
                         { type: "inputFieldErrorWithIconsSmall", codes: [] },
 
                         { type: "textareaFieldError", codes: [] },
+
+                        { type: "selectFieldError", codes: [] },
                     ] }
                     render={ this.renderForm }
                 />
@@ -43,6 +55,40 @@ export class FieldsPage extends Component {
     private renderForm(api: FormRenderProps, submitting?: boolean): ReactNode {
         return (
             <Fragment>
+                <div className="components-store_4-column">
+                    <div className="components-store__item">
+                        <SelectField
+                            name={ "selectFieldEmpty" }
+                            label={ "Select empty" }
+                            placeholder={ "Select" }
+                            options={options}
+                        />
+                    </div>
+                    <div className="components-store__item">
+                        <SelectField
+                            name={ "selectFieldError" }
+                            label={ "Select error" }
+                            placeholder={ "Select" }
+                            options={options}
+                        />
+                    </div>
+                    <div className="components-store__item">
+                        <SelectField
+                            name={ "selectFieldWithValue" }
+                            label={ "Select with value" }
+                            placeholder={ "Select" }
+                            options={options}
+                        />
+                    </div>
+                    <div className="components-store__item">
+                        <SelectField
+                            name={ "selectFieldDisabledWithValue" }
+                            label={ "Select disabled with value" }
+                            disabled={ true }
+                            options={options}
+                        />
+                    </div>
+                </div>
                 <div className="components-store_4-column">
                     <div className="components-store__item">
                         <TextareaField
