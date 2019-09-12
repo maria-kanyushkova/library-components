@@ -7,5 +7,4 @@ import "./card.scss";
 import "./toggle.scss";
 import "./checkbox.scss";
 import "./radio.scss";
-import "./submenu.scss";
 import "./tab.scss";

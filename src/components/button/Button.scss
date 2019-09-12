@@ -24,12 +24,12 @@
     }
 }
 
-@mixin setButtonTypeTheme($type) {
+@mixin set-button-theme($type) {
     &[data-type=#{$type}] {
-        background-color: var(--button-#{$type}-normal-background-color);
-        color: var(--button-#{$type}-normal-text-color);
-        border-color: var(--button-#{$type}-normal-border-color);
-        box-shadow: var(--button-#{$type}-normal-box-shadow);
+        background-color: var(--button-#{$type}-background-color);
+        color: var(--button-#{$type}-text-color);
+        border-color: var(--button-#{$type}-border-color);
+        box-shadow: var(--button-#{$type}-box-shadow);
 
         &:hover {
             background-color: var(--button-#{$type}-hover-background-color);
@@ -50,11 +50,11 @@
 }
 
 .button {
-    @include setFontStyle(16px, "SFDisplay-Medium");
+    @include set-font-style(500, 16px, "SFDisplay");
 
-    @include setButtonTypeTheme("primary");
-    @include setButtonTypeTheme("secondary");
-    @include setButtonTypeTheme("floating");
+    @include set-button-theme("primary");
+    @include set-button-theme("secondary");
+    @include set-button-theme("floating");
 
     @include setButtonIcon("plus", "primary");
     @include setButtonIcon("plus", "secondary");

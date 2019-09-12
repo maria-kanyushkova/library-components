@@ -39,7 +39,7 @@
         }
 
         &__title {
-            @include setFontStyle(16px, "SFDisplay-Medium");
+            @include set-font-style(500, 16px, "SFDisplay");
 
             line-height: 55px;
             color: var(--accordion-title-color);

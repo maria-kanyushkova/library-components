@@ -18,7 +18,7 @@ export const ToggleField: FC<IToggleFieldProps> = ({
                                                        labelPosition = LabelPosition.LEFT, ...rest
                                                    }) => {
     return (
-        <div className="form-group" data-visible={ visible }>
+        <div className="form-group toggle-group" data-visible={ visible }>
             <Field
                 name={ name }
                 type="checkbox"

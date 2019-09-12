@@ -4,7 +4,7 @@
     $radio-size: 20px;
 
     display: flex;
-    min-height: auto !important;
+    min-height: auto;
 
     .radio {
         @include square($radio-size);
@@ -42,7 +42,7 @@
         }
 
         &-label {
-            @include setFontStyle(13px, "SFText-Medium");
+            @include set-font-style(400, 13px, "SFText");
 
             line-height: 20px;
             color: var(--radio-label-color);

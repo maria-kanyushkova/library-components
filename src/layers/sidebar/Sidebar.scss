@@ -11,7 +11,7 @@
     background: var(--dark-blue-color);
 
     &__link {
-        @include setFontStyle(16px, "SFDisplay-Medium");
+        @include set-font-style(500, 16px, "SFDisplay");
 
         line-height: 24px;
         color: #a9a9a9;

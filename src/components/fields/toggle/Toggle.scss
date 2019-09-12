@@ -1,11 +1,14 @@
 @import "~styles/utils/_mixins.scss";
 
+.toggle-group {
+    min-height: auto;
+}
+
 .toggle-field {
     display: flex;
-    min-height: auto;
 
     &__label {
-        @include setFontStyle(13px, "SFText-Regular");
+        @include set-font-style(400, 13px, "SFText");
 
         line-height: 21px;
         color: var(--toggle-label-color);
@@ -30,7 +33,7 @@
 
         &[data-disable="true"] {
             .toggle__item:before {
-                background-color: var(--toggle-disable-item-background-color) !important;
+                background-color: var(--toggle-disable-background-color) !important;
             }
 
             .form-control {

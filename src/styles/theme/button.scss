@@ -1,9 +1,9 @@
 :root {
     // primary
-    --button-primary-normal-background-color: #00077B;
-    --button-primary-normal-text-color: #ffffff;
-    --button-primary-normal-border-color: #ffffff00;
-    --button-primary-normal-box-shadow: none;
+    --button-primary-background-color: #00077B;
+    --button-primary-text-color: #ffffff;
+    --button-primary-border-color: #ffffff00;
+    --button-primary-box-shadow: none;
 
     --button-primary-hover-background-color: #2043bd;
     --button-primary-hover-border-color: #ffffff00;
@@ -16,10 +16,10 @@
     --button-primary-disabled-text-color: #e6e6e6;
 
     // secondary
-    --button-secondary-normal-background-color: #E4EAF7;
-    --button-secondary-normal-text-color: #00077B;
-    --button-secondary-normal-border-color: #ffffff00;
-    --button-secondary-normal-box-shadow: none;
+    --button-secondary-background-color: #E4EAF7;
+    --button-secondary-text-color: #00077B;
+    --button-secondary-border-color: #ffffff00;
+    --button-secondary-box-shadow: none;
 
     --button-secondary-hover-background-color: #c3d5f9;
     --button-secondary-hover-border-color: #ffffff00;
@@ -32,10 +32,10 @@
     --button-secondary-disabled-text-color: #a6a6a6;
 
     // floating
-    --button-floating-normal-background-color: #ffffff;
-    --button-floating-normal-text-color: #00077B;
-    --button-floating-normal-border-color: #ffffff00;
-    --button-floating-normal-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    --button-floating-background-color: #ffffff;
+    --button-floating-text-color: #00077B;
+    --button-floating-border-color: #ffffff00;
+    --button-floating-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 
     --button-floating-hover-background-color: #ffffff;
     --button-floating-hover-border-color: rgba(0, 7, 123, 0.5);

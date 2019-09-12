@@ -21,7 +21,7 @@ $icon-size: 30px;
 
     .tab-item {
         &__label {
-            @include setFontStyle(16px, "SFDisplay-Semibold");
+            @include set-font-style(600, 16px, "SFDisplay");
 
             color: var(--tab-label-color);
             display: block;
