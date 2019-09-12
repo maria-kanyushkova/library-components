@@ -1,21 +1,21 @@
 .submenu {
     display: flex;
     height: 100%;
-    background: var(--dark-blue-color);
+    background: var(--submenu-background-color);
     flex-direction: column;
     padding: 20px 40px;
     opacity: 0.9;
 
 
     &__title {
-        color: var(--gray-6-color);
+        color: var(--submenu-title-color);
         font-size: 22px;
+        margin: 20px 0;
     }
 
-    &__title,
     &__link {
         margin: 20px 0;
-        color: var(--gray-3-color);
+        color: var(--submenu-link-color);
     }
 
     &__link {
@@ -23,7 +23,7 @@
 
         &_active,
         &:hover {
-            color: var(--gray-6-color);
+            color: var(--submenu-active-link-color);
         }
     }
 }

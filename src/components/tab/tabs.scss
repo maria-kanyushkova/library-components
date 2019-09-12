@@ -23,19 +23,19 @@ $icon-size: 30px;
         &__label {
             @include setFontStyle(16px, "SFDisplay-Semibold");
 
-            color: var(--gray-1-color);
+            color: var(--tab-label-color);
             display: block;
             padding: 5px 0 9px;
             margin-right: 40px;
             cursor: pointer;
             text-align: center;
-            border-bottom: 4px solid #ffffff00;
+            border-bottom: 4px solid var(--tab-border-color);
             transition: 0.25s ease-in-out;
 
             &[data-active=true] {
-                color: var(--gray-0-color);
+                color: var(--tab-active-label-color);
                 cursor: default;
-                border-bottom-color: var(--gray-0-color);
+                border-bottom-color: var(--tab-active-border-color);
             }
         }
     }

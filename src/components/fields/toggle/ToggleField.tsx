@@ -30,7 +30,7 @@ export const ToggleField: FC<IToggleFieldProps> = ({
                         return (
                             <Fragment>
                                 <div className="toggle-field">
-                                    <div className="toggle__value" data-show={ labelPosition === LabelPosition.LEFT }>
+                                    <div className="toggle-field__label" data-show={ labelPosition === LabelPosition.LEFT }>
                                         { isSwitchLabel ? label : props.input.value ? "Вкл." : "Выкл." }
                                     </div>
                                     <span className="toggle" data-disable={ disabled }>
@@ -42,7 +42,7 @@ export const ToggleField: FC<IToggleFieldProps> = ({
                                         />
                                         <div className="toggle__item"/>
                                     </span>
-                                    <div className="toggle__value" data-show={ labelPosition === LabelPosition.RIGHT }>
+                                    <div className="toggle-field__label" data-show={ labelPosition === LabelPosition.RIGHT }>
                                         { label }
                                     </div>
                                 </div>
