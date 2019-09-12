@@ -1,6 +1,6 @@
 @import "~styles/utils/_mixins.scss";
 
-@mixin getIconAlert($type) {
+@mixin get-icon-alert($type) {
     &[data-type=#{$type}] {
         &:before {
             background-image: url("./img/#{$type}.svg");
