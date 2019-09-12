@@ -10,14 +10,16 @@
         height: 54px;
         display: grid;
         grid-template-columns: 54px auto 150px;
-        background-color: #ffffff;
+        background-color: var(--accordion-background-color);
 
         &__indicator {
-            @include square(44px);
+            $icon-size: 44px;
+
+            @include square($icon-size);
 
             background-image: url("img/indicator.svg");
             background-repeat: no-repeat;
-            background-size: 44px 44px;
+            background-size: $icon-size $icon-size;
             background-position: center center;
             cursor: pointer;
             margin: 5px;
@@ -37,10 +39,10 @@
         }
 
         &__title {
-            @include setFontStyle(16px, "SFDisplay-Medium");
+            @include set-font-style(500, 16px, "SFDisplay");
 
             line-height: 55px;
-            color: #000000;
+            color: var(--accordion-title-color);
             cursor: default;
         }
 

@@ -1,55 +1,50 @@
 @import "~styles/utils/_mixins.scss";
 
 .checkbox-field {
+    $checkbox-size: 20px;
+
     display: flex;
-    min-height: auto !important;
+    min-height: auto;
 
     .checkbox {
-        @include square(20px);
+        @include square($checkbox-size);
 
         position: relative;
-        border-radius: 50%;
 
         input:hover + .checkbox__item:before {
-            background: #E4EAF7 !important;
+            background: var(--checkbox-hover-background-color);
             transition: 0.25s ease-in-out;
         }
 
         &[data-disable="true"] {
-            input:hover ~ .checkbox__item:before {
-                transition: 0.25s ease-in-out;
-                background: #F2F2F2 !important;
-                border: 1px solid #D9D9D9 !important;
+            input:hover + .checkbox__item:before {
+                background-color: var(--checkbox-disable-background-color);
             }
 
             .checkbox__item:before {
-                background-color: #F2F2F2 !important;
-                border-color: #D9D9D9;
+                background-color: var(--checkbox-disable-background-color);
+                border-color: var(--checkbox-disable-border-color);
             }
 
             input:checked ~ .checkbox__item:before {
-                background: #F2F2F2 !important;
-                border: 2px solid #A6A6A6 !important;
+                background: var(--checkbox-disable-background-color);
+                border: 2px solid var(--checkbox-disable-checked-border-color);
             }
 
-
             input:checked ~ .checkbox__item:after {
-                background-image: url("img/check-inactive.svg") !important;
+                background-image: url("img/check-inactive.svg");
             }
 
             .form-control {
-                cursor: default !important;
+                cursor: default;
             }
-
-            background: none !important;
         }
 
-
         &-label {
-            @include setFontStyle(13px, "SFText-Medium");
+            @include set-font-style(500, 13px, "SFText");
 
             line-height: 20px;
-            color: #000000;
+            color: var(--checkbox-label-color);
             display: none;
             margin-left: 30px;
 
@@ -59,60 +54,52 @@
         }
 
         input {
-            @include square(20px !important);
+            @include square($checkbox-size);
+            @include position(absolute, 0, 0, 0, 0);
 
-            position: absolute;
             z-index: 1;
             opacity: 0;
             cursor: pointer;
             min-height: 20px;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            right: 0;
             margin: auto;
         }
 
-        input[type="checkbox"] + .checkbox__item:after {
-            @include square(14px);
+        input + .checkbox__item:after {
+            $icon-size: 14px;
+
+            @include square($icon-size);
+            @include position(absolute, 0, 0, 0, 0);
 
             content: "";
             display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
             margin: auto;
         }
 
-        input[type="checkbox"]:checked + .checkbox__item:after {
+        input:checked + .checkbox__item:after {
             background-image: url("img/check-active.svg");
             background-repeat: no-repeat;
             background-size: 12px 12px;
             background-position: center center;
         }
 
-        input[type="checkbox"] + .checkbox__item:before {
-            @include square(18px);
+        input + .checkbox__item:before {
+            $box-size: 18px;
+
+            @include square($box-size);
+            @include position(absolute, 0, 0, 0, 0);
 
             content: "";
             display: block;
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            right: 0;
             margin: auto;
             border-radius: 6px;
-            border: 1px solid #D9D9D9;
-            background-color: #ffffff;
+            border: 1px solid var(--checkbox-background-color);
+            background-color: var(--checkbox-border-color);
         }
 
-        input[type="checkbox"]:checked + .checkbox__item:before {
+        input:checked + .checkbox__item:before {
             @include square(16px);
 
-            border: 2px solid #00077B;
+            border: 2px solid var(--checkbox-checked-border-color);
         }
     }
 }

@@ -1,109 +1,124 @@
 // SF Pro Display
 @font-face {
-    font-family: "SFDisplay-Thin";
+    font-family: "SFDisplay";
     src: local("SFDisplay"),
     url("fonts/SF_Pro_Display/SFProDisplay-Thin.ttf") format("truetype"),
     url("fonts/SF_Pro_Display/SFProDisplay-Thin.woff") format("woff");
+    font-weight: 100;
 }
 
 @font-face {
-    font-family: "SFDisplay-UltraLight";
+    font-family: "SFDisplay";
     src: local("SFDisplay"),
     url("fonts/SF_Pro_Display/SFProDisplay-Ultralight.ttf") format("truetype"),
     url("fonts/SF_Pro_Display/SFProDisplay-Ultralight.woff") format("woff");
+    font-weight: 200;
 }
 
 @font-face {
-    font-family: "SFDisplay-Light";
+    font-family: "SFDisplay";
     src: local("SFDisplay"),
     url("fonts/SF_Pro_Display/SFProDisplay-Light.ttf") format("truetype"),
     url("fonts/SF_Pro_Display/SFProDisplay-Light.woff") format("woff");
+    font-weight: 300;
 }
 
 @font-face {
-    font-family: "SFDisplay-Regular";
+    font-family: "SFDisplay";
     src: local("SFDisplay"),
     url("fonts/SF_Pro_Display/SFProDisplay-Regular.ttf") format("truetype"),
     url("fonts/SF_Pro_Display/SFProDisplay-Regular.woff") format("woff");
+    font-weight: 400;
 }
 
 @font-face {
-    font-family: "SFDisplay-Medium";
+    font-family: "SFDisplay";
     src: local("SFDisplay"),
     url("fonts/SF_Pro_Display/SFProDisplay-Medium.ttf") format("truetype"),
     url("fonts/SF_Pro_Display/SFProDisplay-Medium.woff") format("woff");
+    font-weight: 500;
 }
 
 @font-face {
-    font-family: "SFDisplay-Semibold";
+    font-family: "SFDisplay";
     src: local("SFDisplay"),
     url("fonts/SF_Pro_Display/SFProDisplay-Semibold.ttf") format("truetype"),
     url("fonts/SF_Pro_Display/SFProDisplay-Semibold.woff") format("woff");
+    font-weight: 600;
 }
 
 @font-face {
-    font-family: "SFDisplay-Bold";
+    font-family: "SFDisplay";
     src: local("SFDisplay"),
     url("fonts/SF_Pro_Display/SFProDisplay-Bold.ttf") format("truetype"),
     url("fonts/SF_Pro_Display/SFProDisplay-Bold.woff") format("woff");
+    font-weight: 700;
 }
 
 @font-face {
-    font-family: "SFDisplay-Heavy";
+    font-family: "SFDisplay";
     src: local("SFDisplay"),
     url("fonts/SF_Pro_Display/SFProDisplay-Heavy.ttf") format("truetype"),
     url("fonts/SF_Pro_Display/SFProDisplay-Heavy.woff") format("woff");
+    font-weight: 800;
 }
 
 @font-face {
-    font-family: "SFDisplay-Black";
+    font-family: "SFDisplay";
     src: local("SFDisplay"),
     url("fonts/SF_Pro_Display/SFProDisplay-Black.ttf") format("truetype"),
     url("fonts/SF_Pro_Display/SFProDisplay-Black.woff") format("woff");
+    font-weight: 900;
 }
 
 
 // SF Pro Text
 @font-face {
-    font-family: "SFText-Light";
+    font-family: "SFText";
     src: local("SFText"),
     url("fonts/SF_Pro_Text/SFProText-Light.ttf") format("truetype"),
     url("fonts/SF_Pro_Text/SFProText-Light.woff") format("woff");
+    font-weight: 300;
 }
 
 @font-face {
-    font-family: "SFText-Regular";
+    font-family: "SFText";
     src: local("SFText"),
     url("fonts/SF_Pro_Text/SFProText-Regular.ttf") format("truetype"),
     url("fonts/SF_Pro_Text/SFProText-Regular.woff") format("woff");
+    font-weight: 400;
 }
 
 @font-face {
-    font-family: "SFText-Medium";
+    font-family: "SFText";
     src: local("SFText"),
     url("fonts/SF_Pro_Text/SFProText-Medium.ttf") format("truetype"),
     url("fonts/SF_Pro_Text/SFProText-Medium.woff") format("woff");
+    font-weight: 500;
 }
 
 @font-face {
-    font-family: "SFText-Semibold";
+    font-family: "SFText";
     src: local("SFText"),
     url("fonts/SF_Pro_Text/SFProText-Semibold.ttf") format("truetype"),
     url("fonts/SF_Pro_Text/SFProText-Semibold.woff") format("woff");
+    font-weight: 600;
 }
 
 @font-face {
-    font-family: "SFText-Bold";
+    font-family: "SFText";
     src: local("SFText"),
     url("fonts/SF_Pro_Text/SFProText-Bold.ttf") format("truetype"),
     url("fonts/SF_Pro_Text/SFProText-Bold.woff") format("woff");
+    font-weight: 700;
 }
 
 @font-face {
-    font-family: "SFText-Heavy";
+    font-family: "SFText";
     src: local("SFText"),
     url("fonts/SF_Pro_Text/SFProText-Heavy.ttf") format("truetype"),
     url("fonts/SF_Pro_Text/SFProText-Heavy.woff") format("woff");
+    font-weight: 800;
 }
 
 

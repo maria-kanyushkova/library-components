@@ -24,83 +24,66 @@
     }
 }
 
+@mixin set-button-theme($type) {
+    &[data-type=#{$type}] {
+        background-color: var(--button-#{$type}-background-color);
+        color: var(--button-#{$type}-text-color);
+        border-color: var(--button-#{$type}-border-color);
+        box-shadow: var(--button-#{$type}-box-shadow);
+
+        &:hover {
+            background-color: var(--button-#{$type}-hover-background-color);
+            border-color: var(--button-#{$type}-hover-border-color);
+        }
+
+        &:active {
+            background-color: var(--button-#{$type}-active-background-color);
+            color: var(--button-#{$type}-active-text-color);
+            border-color: var(--button-#{$type}-active-border-color);
+        }
+
+        &.disabled {
+            background-color: var(--button-#{$type}-disabled-background-color);
+            color: var(--button-#{$type}-disabled-text-color);
+        }
+    }
+}
+
 .button {
-    @include setFontStyle(16px, "SFDisplay-Medium");
+    @include set-font-style(500, 16px, "SFDisplay");
+
+    @include set-button-theme("primary");
+    @include set-button-theme("secondary");
+    @include set-button-theme("floating");
+
+    @include setButtonIcon("plus", "primary");
+    @include setButtonIcon("plus", "secondary");
+    @include setButtonIcon("plus-tiny", "primary");
+    @include setButtonIcon("plus-tiny", "secondary");
+
+    @include setButtonIcon("arrow-down", "primary");
+    @include setButtonIcon("arrow-down", "secondary");
+    @include setButtonIcon("arrow-down-tiny", "primary");
+    @include setButtonIcon("arrow-down-tiny", "secondary");
+
+    @include setButtonIcon("arrow-right", "floating");
+    @include setButtonIcon("arrow-right", "primary");
+    @include setButtonIcon("arrow-left", "primary");
+    @include setButtonIcon("arrow-top", "floating");
 
     line-height: 24px;
     height: 50px;
-    max-width: 325px !important;
-    outline: none !important;
+    max-width: 325px;
     padding: 13px 20px;
     border-radius: 6px;
     position: relative;
     text-align: left;
     transition: 0.25s ease-in-out;
-    border: 1px solid #ffffff00;
+    border: 1px solid;
 
-    &[data-type="primary"] {
-        background-color: #00077B;
-        color: #ffffff;
-
-        &:hover {
-            background-color: #2043bd;
-        }
-
-        &:focus {
-            box-shadow: none !important;
-        }
-
-        &:active {
-            background-color: #2043bd;
-            color: #8fa1de;
-        }
-
-        &.disabled {
-            background-color: #a6a6a6;
-            color: #E6E6E6;
-        }
-    }
-
-    &[data-type="secondary"] {
-        background-color: #e4eaf7;
-        color: #00077B;
-
-        &:hover {
-            background-color: #c3d5f9;
-        }
-
-        &:focus {
-            box-shadow: none !important;
-        }
-
-        &:active {
-            background-color: #c3d5f9;
-            color: #626EBA;
-        }
-
-        &.disabled {
-            background-color: #f2f2f2;
-            color: #A6A6A6;
-        }
-    }
-
-    &[data-type="floating"] {
-        background-color: #ffffff;
-        color: #00077B;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) !important;
-
-        &:hover {
-            border: 1px solid #00077B;
-        }
-
-        &:active {
-            color: rgba(0, 7, 123, 0.5);
-        }
-
-        &.disabled {
-            background-color: #ffffff;
-            color: #A6A6A6;
-        }
+    &:focus {
+        box-shadow: none;
+        outline: none;
     }
 
     &.disabled, &[data-type="inactive"] {
@@ -115,24 +98,25 @@
         padding: 3px 10px;
 
         &:before {
-            @include square(20px);
+            $tiny-icon-size: 20px;
 
-            background-size: 20px 20px;
-            top: 4px;
-            right: 4px;
+            @include square($tiny-icon-size);
+            @include position($top: 4px, $right: 4px);
+
+            background-size: $tiny-icon-size $tiny-icon-size;
         }
     }
 
     &.button-mini {
-        @include square(50px);
+        $button-size: 50px;
+
+        @include square($button-size);
 
         &.button-tiny {
-            @include square(30px !important);
+            $button-tiny-size: 30px;
 
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
+            @include square($button-tiny-size);
+            @include position($top: 0, $right: 0, $bottom: 0, $left: 0);
         }
 
         &[data-type="floating"] {
@@ -140,10 +124,7 @@
         }
 
         &:before {
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
+            @include position($top: 0, $right: 0, $bottom: 0, $left: 0);
         }
     }
 
@@ -160,39 +141,24 @@
     }
 
     &:before {
-        @include square(44px);
+        $icon-size: 44px;
+
+        @include square($icon-size);
+        @include position(absolute, $top: 2px, $right: 2px);
 
         content: "";
         display: block;
         background-position: center center;
-        background-size: 44px 44px;
+        background-size: $icon-size $icon-size;
         background-repeat: no-repeat;
-        position: absolute;
-        top: 2px;
-        right: 2px;
         margin: auto;
-        opacity: 0.75;
+        opacity: 0.8;
     }
-
-    @include setButtonIcon("plus", "primary");
-    @include setButtonIcon("plus", "secondary");
-    @include setButtonIcon("plus-tiny", "primary");
-    @include setButtonIcon("plus-tiny", "secondary");
-
-    @include setButtonIcon("arrow-down", "primary");
-    @include setButtonIcon("arrow-down", "secondary");
-    @include setButtonIcon("arrow-down-tiny", "primary");
-    @include setButtonIcon("arrow-down-tiny", "secondary");
-
-    @include setButtonIcon("arrow-right", "floating");
-    @include setButtonIcon("arrow-right", "primary");
-    @include setButtonIcon("arrow-left", "primary");
-    @include setButtonIcon("arrow-top", "floating");
 }
 
 @keyframes showIcon {
     from {
-        opacity: 0.75;
+        opacity: 0.8;
     }
     to {
         opacity: 1;

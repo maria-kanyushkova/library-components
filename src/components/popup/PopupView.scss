@@ -1,45 +1,35 @@
 @import "~styles/utils/_mixins.scss";
 
 .popup-container {
+    @include position($position: absolute, $top: 0, $left:0);
+
     width: 100vw;
     height: 100vh;
     z-index: 1000;
-    position: absolute;
-    top: 0;
-    left: 0;
     overflow: hidden;
 
     .overlay {
         @include square(100%);
+        @include position($position: absolute, $top: 0, $left:0);
 
-        position: absolute;
-        top: 0;
-        left: 0;
         background: rgba(0, 0, 0, 0.5);
         z-index: 1001;
     }
 
     .popup {
+        @include position(absolute, 0, 0, 0, 0);
+
         width: 400px;
         height: 400px;
         z-index: 1002;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
         margin: auto;
-        background-color: #FFFFFF;
+        background-color: #ffffff;
         display: flex;
         flex-direction: column;
 
         &-header {
             height: 44px;
             margin: 10px;
-        }
-
-        &-body {
-
         }
 
         &-footer {
@@ -56,10 +46,12 @@
             }
 
             &__close {
-                @include square(44px);
+                $icon-size: 44px;
+
+                @include square($icon-size);
 
                 background-image: url("img/close.svg");
-                background-size: 44px 44px;
+                background-size: $icon-size $icon-size;
                 background-repeat: no-repeat;
                 display: flex;
                 flex-direction: column;

@@ -32,9 +32,10 @@
     }
 
     &-main {
-        background-color: #ffffff;
+        background-color: var(--gray-6-color);
         display: flex;
         flex: 1 1 auto;
+        height: 100vh;
     }
 
     &-content {

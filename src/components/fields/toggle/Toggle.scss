@@ -1,40 +1,43 @@
 @import "~styles/utils/_mixins.scss";
 
+.toggle-group {
+    min-height: auto;
+}
+
 .toggle-field {
     display: flex;
-    min-height: auto !important;
+
+    &__label {
+        @include set-font-style(400, 13px, "SFText");
+
+        line-height: 21px;
+        color: var(--toggle-label-color);
+        margin-right: 7px;
+        width: 36px;
+        text-align: right;
+        display: none;
+
+        &[data-show=true] {
+            display: block;
+        }
+
+        &:last-child {
+            margin-left: 10px;
+        }
+    }
 
     .toggle {
         width: 34px;
         height: 20px;
         position: relative;
 
-        &__value {
-            @include setFontStyle(13px, "SFText-Regular");
-
-            line-height: 21px;
-            color: #000000;
-            margin-right: 7px;
-            width: 36px;
-            text-align: right;
-            display: none;
-
-            &[data-show=true] {
-                display: block;
-            }
-
-            &:last-child {
-                margin-left: 10px;
-            }
-        }
-
         &[data-disable="true"] {
             .toggle__item:before {
-                background-color: #e6e6e6 !important;
+                background-color: var(--toggle-disable-background-color) !important;
             }
 
             .form-control {
-                cursor: default !important;
+                cursor: default;
             }
         }
 
@@ -56,7 +59,7 @@
             display: block;
             position: absolute;
             border-radius: 3px;
-            background-color: #ffffff;
+            background-color: var(--toggle-inactive-item-color);
             -webkit-transition: all ease-out 0.25s;
             transition: all ease-out 0.25s;
             top: 0;
@@ -77,11 +80,11 @@
             height: 20px;
             left: 0;
             top: 0;
-            background-color: #A6A6A6;
+            background-color: var(--toggle-inactive-background-color);
         }
 
         input[type="checkbox"]:checked + .toggle__item:before {
-            background-color: #00077B;
+            background-color: var(--toggle-active-background-color);
         }
     }
 }
