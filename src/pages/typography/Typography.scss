@@ -13,64 +13,64 @@
         }
 
         &[data-type="SFDisplay-Thin"] {
-            @include setFontStyle(18px, "SFDisplay-Thin");
+            @include set-font-style(100, 18px, "SFDisplay");
         }
 
         &[data-type="SFDisplay-UltraLight"] {
-            @include setFontStyle(18px, "SFDisplay-UltraLight");
+            @include set-font-style(200, 18px, "SFDisplay");
         }
 
         &[data-type="SFDisplay-Light"] {
-            @include setFontStyle(18px, "SFDisplay-Light");
+            @include set-font-style(300, 18px, "SFDisplay");
         }
 
         &[data-type="SFDisplay-Regular"] {
-            @include setFontStyle(18px, "SFDisplay-Regular");
+            @include set-font-style(400, 18px, "SFDisplay");
         }
 
         &[data-type="SFDisplay-Medium"] {
-            @include setFontStyle(18px, "SFDisplay-Medium");
+            @include set-font-style(500, 18px, "SFDisplay");
         }
 
         &[data-type="SFDisplay-Semibold"] {
-            @include setFontStyle(18px, "SFDisplay-Semibold");
+            @include set-font-style(600, 18px, "SFDisplay");
         }
 
         &[data-type="SFDisplay-Bold"] {
-            @include setFontStyle(18px, "SFDisplay-Bold");
+            @include set-font-style(700, 18px, "SFDisplay");
         }
 
         &[data-type="SFDisplay-Heavy"] {
-            @include setFontStyle(18px, "SFDisplay-Heavy");
+            @include set-font-style(800, 18px, "SFDisplay");
         }
 
         &[data-type="SFDisplay-Black"] {
-            @include setFontStyle(18px, "SFDisplay-Black");
+            @include set-font-style(900, 18px, "SFDisplay");
         }
 
 
         &[data-type="SFText-Light"] {
-            @include setFontStyle(18px, "SFText-Light");
+            @include set-font-style(300, 18px, "SFText");
         }
 
         &[data-type="SFText-Regular"] {
-            @include setFontStyle(18px, "SFText-Regular");
+            @include set-font-style(400, 18px, "SFText");
         }
 
         &[data-type="SFText-Medium"] {
-            @include setFontStyle(18px, "SFText-Medium");
+            @include set-font-style(500, 18px, "SFText");
         }
 
         &[data-type="SFText-Semibold"] {
-            @include setFontStyle(18px, "SFText-Semibold");
+            @include set-font-style(600, 18px, "SFText");
         }
 
         &[data-type="SFText-Bold"] {
-            @include setFontStyle(18px, "SFText-Bold");
+            @include set-font-style(700, 18px, "SFText");
         }
 
         &[data-type="SFText-Heavy"] {
-            @include setFontStyle(18px, "SFText-Heavy");
+            @include set-font-style(800, 18px, "SFText");
         }
     }
 }

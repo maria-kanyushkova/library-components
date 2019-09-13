@@ -1,0 +1,49 @@
+:root {
+    // primary
+    --button-primary-background-color: #00077B;
+    --button-primary-text-color: #ffffff;
+    --button-primary-border-color: #ffffff00;
+    --button-primary-box-shadow: none;
+
+    --button-primary-hover-background-color: #2043bd;
+    --button-primary-hover-border-color: #ffffff00;
+
+    --button-primary-active-background-color: #2043bd;
+    --button-primary-active-text-color: #8fa1de;
+    --button-primary-active-border-color: #ffffff00;
+
+    --button-primary-disabled-background-color: #a6a6a6;
+    --button-primary-disabled-text-color: #e6e6e6;
+
+    // secondary
+    --button-secondary-background-color: #E4EAF7;
+    --button-secondary-text-color: #00077B;
+    --button-secondary-border-color: #ffffff00;
+    --button-secondary-box-shadow: none;
+
+    --button-secondary-hover-background-color: #c3d5f9;
+    --button-secondary-hover-border-color: #ffffff00;
+
+    --button-secondary-active-background-color: #c3d5f9;
+    --button-secondary-active-text-color: #626EBA;
+    --button-secondary-active-border-color: #ffffff00;
+
+    --button-secondary-disabled-background-color: #f2f2f2;
+    --button-secondary-disabled-text-color: #a6a6a6;
+
+    // floating
+    --button-floating-background-color: #ffffff;
+    --button-floating-text-color: #00077B;
+    --button-floating-border-color: #ffffff00;
+    --button-floating-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+
+    --button-floating-hover-background-color: #ffffff;
+    --button-floating-hover-border-color: rgba(0, 7, 123, 0.5);
+
+    --button-floating-active-background-color: #ffffff;
+    --button-floating-active-border-color: rgba(0, 7, 123, 0.5);
+    --button-floating-active-text-color: rgba(0, 7, 123, 0.5);
+
+    --button-floating-disabled-background-color: #ffffff;
+    --button-floating-disabled-text-color: #a6a6a6;
+}

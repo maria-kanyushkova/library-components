@@ -57,34 +57,8 @@
     color: $color;
 }
 
-@mixin setFontStyle($size, $family) {
+@mixin set-font-style($weight, $size, $family) {
+    font-weight: $weight;
     font-size: $size;
     font-family: $family;
-}
-
-@mixin getCustomizeFieldStyle() {
-    background: var(--gray-6-color);
-    border: 2px solid var(--gray-3-color);
-    position: relative;
-
-    &:hover {
-        transition: 0.25s ease-in-out !important;
-        border: 2px solid rgba(0, 7, 123, 0.4);
-    }
-
-    &:focus {
-        border: 2px solid var(--blue-color);
-        outline: 0 !important;
-        box-shadow: none !important;
-    }
-
-    &:disabled {
-        background: var(--gray-5-color) !important;
-        border: 2px solid var(--gray-3-color) !important;
-        color: var(--gray-1-color) !important;
-    }
-
-    &_error {
-        border: 2px solid var(--red-color) !important;
-    }
 }
