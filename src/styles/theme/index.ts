@@ -8,3 +8,4 @@ import "./toggle.scss";
 import "./checkbox.scss";
 import "./radio.scss";
 import "./tab.scss";
+import "./select.scss";

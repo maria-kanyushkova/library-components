@@ -4,16 +4,16 @@
     .select {
         &-label {
             @include position(absolute, $top: -5px, $left: 0);
-            @include setFontStyle(13px, "SFText-Regular");
+            @include set-font-style(400, 13px, "SFText");
 
-            color: var(--gray-1-color);
+            color: var(--select-label-color);
             line-height: 20px;
         }
 
         &-input {
-            @include setFontStyle(16px, "SFDisplay-Regular");
+            @include set-font-style(400, 16px, "SFDisplay");
 
-            color: var(--gray-0-color);
+            color: var(--select-input-value-color);
             line-height: 24px;
             margin-top: 20px;
             padding: 0;
@@ -21,15 +21,14 @@
 
         .select-field {
             &__control {
-                background: var(--gray-6-color);
-                border: 2px solid var(--gray-3-color);
+                background: var(--select-control-background-color);
+                border: 2px solid var(--select-control-border-color);
                 position: relative;
                 box-shadow: none;
 
                 &:hover {
                     transition: 0.25s ease-in-out;
-                    border: 2px solid rgba(0, 7, 123, 0.4);
-
+                    border: 2px solid var(--select-control-hover-border-color);
                 }
             }
         }
