@@ -12,20 +12,22 @@
     "start": "webpack-dev-server --mode development --color"
   },
   "dependencies": {
+    "@types/react-select": "^3.0.4",
     "classnames": "^2.2.6",
-    "react-event-listener": "^0.6.6",
-    "react-final-form": "^6.3.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "core-decorators": "^0.20.0",
     "lodash": "^4.17.15",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-event-listener": "^0.6.6",
+    "react-final-form": "^6.3.0",
+    "react-select": "^3.0.4",
     "rxjs": "^6.5.2"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "core-decorators": "^0.20.0",
     "lodash": "^4.17.15",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "rxjs": "^6.5.2"
   },
   "devDependencies": {
