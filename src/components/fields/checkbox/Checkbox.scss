@@ -7,9 +7,15 @@
     min-height: auto;
 
     .checkbox {
-        @include square($checkbox-size);
-
+        height: $checkbox-size;
+        display: flex;
         position: relative;
+
+        &__item {
+            @include square($checkbox-size);
+
+            position: relative;
+        }
 
         input:hover + .checkbox__item:before {
             background: var(--checkbox-hover-background-color);
@@ -46,7 +52,7 @@
             line-height: 20px;
             color: var(--checkbox-label-color);
             display: none;
-            margin-left: 30px;
+            margin-left: 10px;
 
             &[data-show=true] {
                 display: block;
@@ -55,8 +61,8 @@
 
         input {
             @include square($checkbox-size);
-            @include position(absolute, 0, 0, 0, 0);
 
+            position: absolute;
             z-index: 1;
             opacity: 0;
             cursor: pointer;
