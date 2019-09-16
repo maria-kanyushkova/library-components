@@ -2,9 +2,8 @@ import * as React from "react";
 import { Component, Fragment, ReactNode } from "react";
 import "../ComponentsStore.scss";
 import { FormRenderProps } from "react-final-form";
-import { Button, CustomForm, TextareaField, TextField } from "../../components";
+import { Button, CustomForm, SelectField, TextareaField, TextField } from "../../components";
 import { keys, reduce, set } from "lodash";
-import { SelectField } from "../../components/fields/select";
 
 const options = [
     { value: "chocolate", label: "Chocolate" },
