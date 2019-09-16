@@ -5,7 +5,7 @@
 
     .select {
         &-label {
-            @include position(absolute, $top: -5px, $left: 0);
+            @include position(absolute, $top: 0, $left: 0);
             @include set-font-style(400, 13px, "SFText");
 
             color: var(--select-label-color);
@@ -17,7 +17,7 @@
 
             color: var(--select-input-value-color);
             line-height: 24px;
-            margin-top: 20px;
+            margin-top: 25px;
             padding: 0;
         }
 
