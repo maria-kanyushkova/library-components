@@ -7,10 +7,16 @@
     min-height: auto;
 
     .radio {
-        @include square($radio-size);
-
+        height: $radio-size;
         position: relative;
         border-radius: 50%;
+        display: flex;
+
+        &__item {
+            @include square($radio-size);
+
+            position: relative;
+        }
 
         input:hover + .radio__item:before {
             background: var(--radio-hover-background-color);
@@ -47,7 +53,7 @@
             line-height: 20px;
             color: var(--radio-label-color);
             display: none;
-            margin-left: 30px;
+            margin-left: 10px;
 
             &[data-show=true] {
                 display: block;
