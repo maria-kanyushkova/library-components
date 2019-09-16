@@ -2,9 +2,8 @@ import * as React from "react";
 import { Component, Fragment, ReactNode } from "react";
 import "../ComponentsStore.scss";
 import { FormRenderProps } from "react-final-form";
-import { Button, CustomForm, TextareaField, TextField } from "../../components";
+import { Button, CustomForm, SelectField, TextareaField, TextField } from "../../components";
 import { keys, reduce, set } from "lodash";
-import { SelectField } from "../../components/fields/Select";
 
 const options = [
     { value: "chocolate", label: "Chocolate" },
@@ -65,7 +64,7 @@ export class FieldsPage extends Component {
                     <div className="components-store__item">
                         <SelectField
                             name={ "selectFieldEmpty" }
-                            label={ "Select empty" }
+                            label={ "select empty" }
                             placeholder={ "Select" }
                             options={options}
                         />
@@ -73,7 +72,7 @@ export class FieldsPage extends Component {
                     <div className="components-store__item">
                         <SelectField
                             name={ "selectFieldError" }
-                            label={ "Select error" }
+                            label={ "select error" }
                             placeholder={ "Select" }
                             options={options}
                         />
@@ -81,7 +80,7 @@ export class FieldsPage extends Component {
                     <div className="components-store__item">
                         <SelectField
                             name={ "selectFieldWithValue" }
-                            label={ "Select with value" }
+                            label={ "select with value" }
                             placeholder={ "Select" }
                             options={options}
                         />
@@ -89,7 +88,7 @@ export class FieldsPage extends Component {
                     <div className="components-store__item">
                         <SelectField
                             name={ "selectFieldDisabledWithValue" }
-                            label={ "Select disabled with value" }
+                            label={ "select disabled with value" }
                             disabled={ true }
                             options={options}
                         />
