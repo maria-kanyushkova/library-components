@@ -1,6 +1,8 @@
 @import "~styles/utils/_mixins.scss";
 
 .select-field {
+    display: flow-root;
+
     .select {
         &-label {
             @include position(absolute, $top: -5px, $left: 0);
@@ -25,6 +27,7 @@
                 border: 2px solid var(--select-control-border-color);
                 position: relative;
                 box-shadow: none;
+                min-height: 50px;
 
                 &:hover {
                     transition: 0.25s ease-in-out;
