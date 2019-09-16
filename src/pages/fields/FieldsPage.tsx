@@ -64,7 +64,7 @@ export class FieldsPage extends Component {
                     <div className="components-store__item">
                         <SelectField
                             name={ "selectFieldEmpty" }
-                            label={ "select empty" }
+                            label={ "Select empty" }
                             placeholder={ "Select" }
                             options={options}
                         />
@@ -72,7 +72,7 @@ export class FieldsPage extends Component {
                     <div className="components-store__item">
                         <SelectField
                             name={ "selectFieldError" }
-                            label={ "select error" }
+                            label={ "Select error" }
                             placeholder={ "Select" }
                             options={options}
                         />
@@ -80,7 +80,7 @@ export class FieldsPage extends Component {
                     <div className="components-store__item">
                         <SelectField
                             name={ "selectFieldWithValue" }
-                            label={ "select with value" }
+                            label={ "Select with value" }
                             placeholder={ "Select" }
                             options={options}
                         />
@@ -88,7 +88,7 @@ export class FieldsPage extends Component {
                     <div className="components-store__item">
                         <SelectField
                             name={ "selectFieldDisabledWithValue" }
-                            label={ "select disabled with value" }
+                            label={ "Select disabled with value" }
                             disabled={ true }
                             options={options}
                         />
