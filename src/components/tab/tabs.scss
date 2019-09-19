@@ -21,21 +21,21 @@ $icon-size: 30px;
 
     .tab-item {
         &__label {
-            @include setFontStyle(16px, "SFDisplay-Semibold");
+            @include set-font-style(600, 16px, "SFDisplay");
 
-            color: #808080;
+            color: var(--tab-label-color);
             display: block;
             padding: 5px 0 9px;
             margin-right: 40px;
             cursor: pointer;
             text-align: center;
-            border-bottom: 4px solid #ffffff00;
+            border-bottom: 4px solid var(--tab-border-color);
             transition: 0.25s ease-in-out;
 
             &[data-active=true] {
-                color: #000000;
+                color: var(--tab-active-label-color);
                 cursor: default;
-                border-bottom-color: #000000;
+                border-bottom-color: var(--tab-active-border-color);
             }
         }
     }

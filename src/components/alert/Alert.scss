@@ -1,6 +1,6 @@
 @import "~styles/utils/_mixins.scss";
 
-@mixin getIconAlert($type) {
+@mixin get-icon-alert($type) {
     &[data-type=#{$type}] {
         &:before {
             background-image: url("./img/#{$type}.svg");
@@ -9,15 +9,19 @@
 }
 
 .alert {
-    position: absolute;
-    top: 100px;
-    right: 0;
+    @include position(absolute, $top: 100px, $right: 0);
+
+    @include get-icon-alert("none");
+    @include get-icon-alert("negative");
+    @include get-icon-alert("positive");
+    @include get-icon-alert("neutral");
+
     height: 50px;
     width: 325px;
     display: flex;
 
     > span {
-        @include setFontStyle(16px, "SFDisplay-Medium");
+        @include set-font-style(500, 16px, "SFDisplay");
 
         line-height: 24px;
         margin: auto;
@@ -25,66 +29,61 @@
     }
 
     &[data-type="none"] {
-        background-color: rgba(41, 45, 64, 0.9);
+        background-color: var(--alert-none-background-color);
 
         > span {
-            color: #ffffff;
+            color: var(--alert-none-text-color);
         }
     }
 
     &[data-type="negative"] {
-        background-color: #FFE6E6;
+        background-color: var(--alert-negative-background-color);
 
         > span {
-            color: #EB5757;
+            color: var(--alert-negative-text-color);
         }
     }
 
     &[data-type="positive"] {
-        background-color: #DAF7E4;
+        background-color: var(--alert-positive-background-color);
 
         > span {
-            color: #00BF40;
+            color: var(--alert-positive-text-color);
         }
     }
 
     &[data-type="neutral"] {
-        background-color: #E4EAF7;
+        background-color: var(--alert-neutral-background-color);
 
         > span {
-            color: #00077B;
+            color: var(--alert-neutral-text-color);
         }
     }
 
-    @include getIconAlert("none");
-    @include getIconAlert("negative");
-    @include getIconAlert("positive");
-    @include getIconAlert("neutral");
-
     &:before {
-        @include square(44px);
+        $icon-size: 44px;
+
+        @include square($icon-size);
+        @include position(absolute, $top: 0, $right: 0);
 
         content: "";
         display: block;
         margin: 3px;
-        position: absolute;
-        top: 0;
-        right: 0;
         background-repeat: no-repeat;
-        background-size: 44px 44px;
+        background-size: $icon-size $icon-size;
         cursor: pointer;
     }
 
     &[data-open=true] {
         animation: 0.25s dataOpen ease-in-out;
-        margin-top: 0 !important;
-        opacity: 1 !important;
+        margin-top: 0;
+        opacity: 1;
     }
 
     &[data-open=false] {
         animation: 0.25s dataClose ease-in-out;
-        margin-top: -40px !important;
-        opacity: 0 !important;
+        margin-top: -40px;
+        opacity: 0;
     }
 }
 

@@ -1,0 +1,39 @@
+@import "~styles/utils/_mixins.scss";
+
+.select-field {
+    display: flow-root;
+
+    .select {
+        &-label {
+            @include position(absolute, $top: 0, $left: 0);
+            @include set-font-style(400, 13px, "SFText");
+
+            color: var(--select-label-color);
+            line-height: 20px;
+        }
+
+        &-input {
+            @include set-font-style(400, 16px, "SFDisplay");
+
+            color: var(--select-input-value-color);
+            line-height: 24px;
+            margin-top: 25px;
+            padding: 0;
+        }
+
+        .select-field {
+            &__control {
+                background: var(--select-control-background-color);
+                border: 2px solid var(--select-control-border-color);
+                position: relative;
+                box-shadow: none;
+                min-height: 50px;
+
+                &:hover {
+                    transition: 0.25s ease-in-out;
+                    border: 2px solid var(--select-control-hover-border-color);
+                }
+            }
+        }
+    }
+}

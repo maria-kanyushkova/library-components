@@ -2,6 +2,7 @@ import { PopupView } from "./PopupView";
 import * as ReactDOM from "react-dom";
 import { autobind } from "core-decorators";
 import { isNull } from "lodash";
+import { ReactElement } from "react";
 
 @autobind
 export class Popup {
@@ -29,7 +30,7 @@ export class Popup {
         this.state = false;
     }
 
-    draw() {
+    draw(): ReactElement | undefined {
         if (this.state) {
             return ReactDOM.createPortal(this.view.render(), document.body);
         }

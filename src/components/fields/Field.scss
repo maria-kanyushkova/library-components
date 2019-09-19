@@ -12,7 +12,7 @@
     }
 
     &__input {
-        @include setFontStyle(16px, "SFDisplay-Regular");
+        @include set-font-style(400, 16px, "SFDisplay");
 
 		padding: 13px 15px;
         line-height: 20px;
@@ -23,7 +23,7 @@
 
     &__label,
     &__error {
-        @include setFontStyle(13px, "SFText-Regular");
+        @include set-font-style(400, 13px, "SFText");
         line-height: 20px;
     }
 
@@ -34,7 +34,7 @@
     }
 
     &__error {
-        @include setFontStyle(13px, "SFText-Regular");
+        @include set-font-style(400, 13px, "SFText");
 
         color: var(--field-error-color);
         margin: 0;
@@ -78,9 +78,9 @@
     position: relative;
 
     .form-label {
-        @include setFontStyle(13px, "SFText-Regular");
+        @include set-font-style(400, 13px, "SFText");
 
-        color: #808080;
+        color: var(--gray-1-color);
         line-height: 20px;
         margin-bottom: 2px;
         position: absolute;
@@ -89,9 +89,9 @@
     }
 
     .form-control {
-        @include setFontStyle(16px, "SFDisplay-Regular");
+        @include set-font-style(400, 16px, "SFDisplay");
 
-        color: #000000;
+        color: var(--gray-0-color);
         line-height: 24px;
         margin: 24px 0 6px;
         border-radius: 6px;
@@ -99,9 +99,9 @@
     }
 
     .form-text {
-        @include setFontStyle(13px, "SFText-Regular");
+        @include set-font-style(400, 13px, "SFText");
 
-        color: #EB5757;
+        color: var(--red-color);
         line-height: 20px;
         margin: 0;
     }
