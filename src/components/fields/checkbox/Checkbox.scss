@@ -37,10 +37,6 @@
                 border: 2px solid var(--checkbox-disable-checked-border-color);
             }
 
-            input:checked ~ .checkbox__item:after {
-                background-image: url("img/check-inactive.svg");
-            }
-
             .form-control {
                 cursor: default;
             }
@@ -70,22 +66,10 @@
             margin: auto;
         }
 
-        input + .checkbox__item:after {
-            $icon-size: 14px;
-
-            @include square($icon-size);
+        .checkbox__item > svg {
             @include position(absolute, 0, 0, 0, 0);
 
-            content: "";
-            display: block;
             margin: auto;
-        }
-
-        input:checked + .checkbox__item:after {
-            background-image: url("img/check-active.svg");
-            background-repeat: no-repeat;
-            background-size: 12px 12px;
-            background-position: center center;
         }
 
         input + .checkbox__item:before {

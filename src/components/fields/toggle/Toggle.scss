@@ -13,7 +13,6 @@
         line-height: 21px;
         color: var(--toggle-label-color);
         margin-right: 7px;
-        width: 36px;
         text-align: right;
         display: none;
 
@@ -21,8 +20,15 @@
             display: block;
         }
 
+        &:first-child {
+            text-align: right;
+            margin-left: auto;
+        }
+
         &:last-child {
             margin-left: 10px;
+            text-align: left;
+            margin-right: auto;
         }
     }
 

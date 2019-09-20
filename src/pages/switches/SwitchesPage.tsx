@@ -74,13 +74,13 @@ export class SwitchesPage extends Component {
                         <CheckboxField
                             name="checkboxFieldLabel"
                             value={"first"}
-                            checked={get(api.values, "checkboxField", []).indexOf("first") !== -1}
+                            checked={get(api.values, "checkboxFieldLabel", []).indexOf("first") !== -1}
                             label={"Label"}
                         />
                         <CheckboxField
                             name="checkboxFieldLabel"
                             value={"second"}
-                            checked={get(api.values, "checkboxField", []).indexOf("second") !== -1}
+                            checked={get(api.values, "checkboxFieldLabel", []).indexOf("second") !== -1}
                             label={"Label"}
                         />
                     </div>
