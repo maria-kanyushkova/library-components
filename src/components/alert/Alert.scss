@@ -1,20 +1,7 @@
 @import "~styles/utils/_mixins.scss";
 
-@mixin get-icon-alert($type) {
-    &[data-type=#{$type}] {
-        &:before {
-            background-image: url("./img/#{$type}.svg");
-        }
-    }
-}
-
 .alert {
     @include position(absolute, $top: 100px, $right: 0);
-
-    @include get-icon-alert("none");
-    @include get-icon-alert("negative");
-    @include get-icon-alert("positive");
-    @include get-icon-alert("neutral");
 
     height: 50px;
     width: 325px;
@@ -60,7 +47,7 @@
         }
     }
 
-    &:before {
+    .icon {
         $icon-size: 44px;
 
         @include square($icon-size);
@@ -69,8 +56,6 @@
         content: "";
         display: block;
         margin: 3px;
-        background-repeat: no-repeat;
-        background-size: $icon-size $icon-size;
         cursor: pointer;
     }
 

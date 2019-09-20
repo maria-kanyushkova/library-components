@@ -17,10 +17,6 @@
 
             @include square($icon-size);
 
-            background-image: url("img/indicator.svg");
-            background-repeat: no-repeat;
-            background-size: $icon-size $icon-size;
-            background-position: center center;
             cursor: pointer;
             margin: 5px;
 
