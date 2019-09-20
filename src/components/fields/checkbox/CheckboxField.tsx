@@ -31,7 +31,7 @@ export const CheckboxField: FC<IField<string>> = (props) => {
                                         { ...fieldProps.input }
                                     />
                                     <div className="checkbox__item">
-                                        {props.checked === true ? <CheckIcon active={!disabled}/> : ""}
+                                        {props.checked && <CheckIcon active={!disabled}/>}
                                     </div>
                                     <div className="checkbox-label" data-show={ !!label }>{ label }</div>
                                 </span>
