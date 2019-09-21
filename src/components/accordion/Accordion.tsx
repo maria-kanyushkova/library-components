@@ -6,7 +6,7 @@ import { CustomForm } from "../custom-form";
 import { ToggleField } from "../fields";
 import { FormSpy } from "react-final-form";
 import { FormState } from "final-form";
-import { IndicatorIcon } from "./img/indicator";
+import { IndicatorIcon } from "./img/IndicatorIcon";
 
 interface IAccordionState {
     open: boolean;

@@ -2,7 +2,7 @@ import * as React from "react";
 import { FC } from "react";
 import { EAlertType } from "./EAlertType";
 import "./Alert.scss";
-import { CloseIcon } from "./img/CloseIcon";
+import { CloseIcon } from "./img";
 
 interface IAlertProps {
     title: string;

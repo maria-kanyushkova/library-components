@@ -21,7 +21,7 @@ export const TextareaField: FC<IField<TextareaType>> = ({
         return void 0;
     };
 
-    const field = document.querySelector(`textarea[name=${name}]`);
+    const field = document.querySelector(`textarea[name="${name}"]`);
     if (!!field) {
         autosize(field);
     }
