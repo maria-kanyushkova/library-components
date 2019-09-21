@@ -5,7 +5,7 @@ import { IField } from "../IField";
 import { getError } from "../../../utils";
 import "../Field.scss";
 import "./Checkbox.scss";
-import { CheckIcon } from "./img/CheckIcon";
+import { CheckIcon } from "./img";
 
 export const CheckboxField: FC<IField<string>> = (props) => {
     const {
