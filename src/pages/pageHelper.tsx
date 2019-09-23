@@ -3,6 +3,7 @@ import { MainPage } from "./main";
 import { ILink } from "../interfaces/link";
 import { EPaths } from "./EPaths";
 import { FieldsPage } from "./fields";
+import { ModalPage } from "./modal";
 import { SwitchesPage } from "./switches";
 import { ButtonsPage } from "./buttons";
 import { TabsPage } from "./tabs";
@@ -22,7 +23,8 @@ export const pages = [
     { component: () => <ModalsPage/>, path: `/${ EPaths.MODALS }` },
     { component: () => <LoadersPage/>, path: `/${ EPaths.LOADERS }` },
     { component: () => <TypographyPage/>, path: `/${ EPaths.TYPOGRAPHY }` },
-    { component: () => <Redirect to={ `/${ EPaths.MAIN }` }/>, path: "" },
+    { component: () => <ModalPage />, path: `/${ EPaths.MODAL }` },
+    { component: () => <Redirect to={`/${ EPaths.MAIN }`}/>, path: "" },
 ];
 
 export const links: ILink[] = [
@@ -35,4 +37,5 @@ export const links: ILink[] = [
     { path: `/${ EPaths.MODALS }`, label: "Модальные окна" },
     { path: `/${ EPaths.LOADERS }`, label: "Прелоадеры" },
     { path: `/${ EPaths.TYPOGRAPHY }`, label: "Типография" },
+    { path: `/${ EPaths.MODAL }`, label: "Базовое модальное окно" }
 ];

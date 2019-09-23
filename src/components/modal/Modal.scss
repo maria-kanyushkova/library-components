@@ -1,0 +1,76 @@
+@import "~styles/utils/_mixins.scss";
+
+.modal {
+  &__layout {
+    @include position($position: fixed, $top: 0, $left: 0);
+    @include square(100%);
+
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+
+    &_visible {
+      display: flex !important;
+
+      .modal__overlay {
+        background: #000000;
+        opacity: 0.8;
+      }
+    }
+
+    &_hidden {
+      display: none !important;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__content {
+    flex: 1;
+    padding: 24px;
+    display: flex;
+  }
+
+  &__view {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    z-index: 1100;
+    min-width: 480px;
+    min-height: 240px;
+  }
+
+  &__overlay {
+    @include position($position: fixed, $top: 0, $left: 0);
+    @include square(100%);
+
+    z-index: -1;
+    background: none;
+    opacity: 0;
+  }
+
+  &__close {
+    @include square(44px);
+
+    z-index: 1300;
+    cursor: pointer;
+    background: none;
+    border: none;
+    display: flex;
+    padding: 0;
+    margin: 10px 10px 0;
+  }
+
+  &__title {
+    padding: 0 24px;
+    z-index: 1200;
+    font-family: SFDisplay, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    font-weight: 700;
+  }
+}
