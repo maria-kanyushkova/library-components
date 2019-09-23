@@ -6,6 +6,7 @@ import { CustomForm } from "../custom-form";
 import { ToggleField } from "../fields";
 import { FormSpy } from "react-final-form";
 import { FormState } from "final-form";
+import { IndicatorIcon } from "./img/IndicatorIcon";
 
 interface IAccordionState {
     open: boolean;
@@ -51,7 +52,9 @@ export const Accordion: FC<IAccordionItem> = (props) => {
                     data-visible={switchable}
                     data-blocked={isBlocked}
                     onClick={getIndicatorHandler()}
-                />
+                >
+                    <IndicatorIcon/>
+                </div>
                 <div className="accordion-control__title">{title}</div>
                 <div className="accordion-control__switcher" data-visible={switchable}>
                     <CustomForm

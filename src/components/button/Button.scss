@@ -1,29 +1,5 @@
 @import "~styles/utils/_mixins.scss";
 
-@mixin set-button-icon($icon, $type) {
-    &[data-type=#{$type}] {
-        &[data-icon=#{$icon}] {
-            &:before {
-                background-image: url("./img/#{$icon}/#{$type}-#{$icon}-normal.svg");
-            }
-
-            &:active {
-                &:before {
-                    animation: 0.25s showIcon ease-in-out;
-                    background-image: url("./img/#{$icon}/#{$type}-#{$icon}-focus.svg");
-                    opacity: 1;
-                }
-            }
-
-            &.disabled {
-                &:before {
-                    background-image: url("./img/#{$icon}/#{$type}-#{$icon}-disabled.svg");
-                }
-            }
-        }
-    }
-}
-
 @mixin set-button-theme($type) {
     &[data-type=#{$type}] {
         background-color: var(--button-#{$type}-background-color);
@@ -50,34 +26,15 @@
 }
 
 .button {
-    @include set-font-style(500, 16px, "SFDisplay");
-
     @include set-button-theme("primary");
     @include set-button-theme("secondary");
     @include set-button-theme("floating");
 
-    @include set-button-icon("plus", "primary");
-    @include set-button-icon("plus", "secondary");
-    @include set-button-icon("plus-tiny", "primary");
-    @include set-button-icon("plus-tiny", "secondary");
-
-    @include set-button-icon("arrow-down", "primary");
-    @include set-button-icon("arrow-down", "secondary");
-    @include set-button-icon("arrow-down-tiny", "primary");
-    @include set-button-icon("arrow-down-tiny", "secondary");
-
-    @include set-button-icon("arrow-right", "floating");
-    @include set-button-icon("arrow-right", "primary");
-    @include set-button-icon("arrow-left", "primary");
-    @include set-button-icon("arrow-top", "floating");
-
-    line-height: 24px;
     height: 50px;
     max-width: 325px;
     padding: 13px 20px;
     border-radius: 6px;
     position: relative;
-    text-align: left;
     transition: 0.25s ease-in-out;
     border: 1px solid;
 
@@ -97,7 +54,7 @@
         height: 30px;
         padding: 3px 10px;
 
-        &:before {
+        .icon {
             $tiny-icon-size: 20px;
 
             @include square($tiny-icon-size);
@@ -122,10 +79,6 @@
         &[data-type="floating"] {
             border-radius: 50%;
         }
-
-        &:before {
-            @include position($top: 0, $right: 0, $bottom: 0, $left: 0);
-        }
     }
 
     &.button-double {
@@ -140,27 +93,18 @@
         }
     }
 
-    &:before {
-        $icon-size: 44px;
+    .text {
+        @include set-font-style(500, 16px, "SFDisplay");
 
-        @include square($icon-size);
+        line-height: 24px;
+        text-align: left;
+    }
+
+    .icon {
         @include position(absolute, $top: 2px, $right: 2px);
 
         content: "";
         display: block;
-        background-position: center center;
-        background-size: $icon-size $icon-size;
-        background-repeat: no-repeat;
         margin: auto;
-        opacity: 0.8;
-    }
-}
-
-@keyframes showIcon {
-    from {
-        opacity: 0.8;
-    }
-    to {
-        opacity: 1;
     }
 }

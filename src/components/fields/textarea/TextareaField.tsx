@@ -11,9 +11,9 @@ import autosize from "autosize";
 type TextareaType = string;
 
 export const TextareaField: FC<IField<TextareaType>> = ({
-    name, label, placeholder, mask, type, validate,
-    visible = true, disabled = false, ...rest
-                                          }) => {
+                                                            name, label, placeholder, mask, type, validate,
+                                                            visible = true, disabled = false, ...rest
+                                                        }) => {
     const validateField = (value: TextareaType, allValues: object): Nullable<TextareaType> => {
         if (validate) {
             return validate(value, allValues);
@@ -21,7 +21,7 @@ export const TextareaField: FC<IField<TextareaType>> = ({
         return void 0;
     };
 
-    const field = document.querySelector(`textarea[name=${name}]`);
+    const field = document.querySelector(`textarea[name="${name}"]`);
     if (!!field) {
         autosize(field);
     }
@@ -48,8 +48,8 @@ export const TextareaField: FC<IField<TextareaType>> = ({
                         const error = getError(props, type);
                         return (
                             <Fragment>
-								<label className="field__label">{label}</label>
-								<div className="field-input-container">
+                                <label className="field__label">{label}</label>
+                                <div className="field-input-container">
                                       <textarea
                                           className={`textarea-field__input field__input input ${!!error ? "input_error" : ""}`}
                                           disabled={disabled}
@@ -57,7 +57,7 @@ export const TextareaField: FC<IField<TextareaType>> = ({
                                           {...props.input}
                                           {...{ placeholder, type }}
                                       />
-								</div>
+                                </div>
                                 <span className="field__error">{error}</span>
                             </Fragment>
                         );
