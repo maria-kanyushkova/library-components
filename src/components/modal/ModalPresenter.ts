@@ -1,7 +1,7 @@
 import React from "react";
 import { IModalPresenter } from "./IModalPresenter";
 import { IModalView } from "./IModalView";
-import _ from "lodash";
+import { debounce } from "lodash";
 
 export class ModalPresenter implements IModalPresenter {
   private FOCUS_DEBOUNCE_TIMEOUT = 100;
@@ -14,7 +14,7 @@ export class ModalPresenter implements IModalPresenter {
     this.onClose = this.onClose.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     // prevent recursion with _.debounce
-    this.onDocumentFocus = _.debounce(
+    this.onDocumentFocus = debounce(
       this.onDocumentFocus.bind(this),
       this.FOCUS_DEBOUNCE_TIMEOUT,
       {

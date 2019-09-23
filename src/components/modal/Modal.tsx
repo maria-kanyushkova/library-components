@@ -1,6 +1,7 @@
 // tslint:disable:jsx-wrap-multiline
 // tslint:disable:no-null-keyword
 
+import classNames from "classnames";
 import React, {
   FC,
   ReactNode,
@@ -62,7 +63,10 @@ export const Modal: FC<IModalProps> = props => {
 
   return ReactDOM.createPortal(
     <div
-      className={`modal__layout modal__layout--${visibility}`}
+      className={classNames({
+        modal__layout: true,
+        [`modal__layout_${visibility}`]: true
+      })}
       role="presentation"
       aria-labelledby="modal__title"
       aria-hidden={!visible}
