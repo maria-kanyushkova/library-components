@@ -6,8 +6,11 @@ import { getError } from "../../../utils";
 import "../Field.scss";
 import "./Checkbox.scss";
 import { CheckIcon } from "./img";
+import { ReactText } from "react";
 
-export const CheckboxField: FC<IField<string>> = (props) => {
+type TCheckboxField = ReactText;
+
+export const CheckboxField: FC<IField<TCheckboxField>> = (props) => {
     const {
         name, label, visible = true, disabled = false, type, ...rest
     } = props;

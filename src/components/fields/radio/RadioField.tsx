@@ -1,12 +1,14 @@
 import * as React from "react";
-import { FC, Fragment } from "react";
+import { FC, Fragment, ReactText } from "react";
 import { Field } from "react-final-form";
 import { IField } from "../IField";
 import { getError } from "../../../utils";
 import "../Field.scss";
 import "./Radio.scss";
 
-export const RadioField: FC<IField<string>> = (props) => {
+type TRadioField = ReactText;
+
+export const RadioField: FC<IField<TRadioField>> = (props) => {
     const {
         name, label, type,
         visible = true, disabled = false, ...rest
