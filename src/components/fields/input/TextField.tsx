@@ -9,6 +9,16 @@ import { isString } from "lodash";
 import { ITextFieldProps } from "./ITextFieldProps";
 import classNames from "classnames";
 
+function formatValue(value: string, maxLength?: number): string {
+    if (!value) {
+        return value;
+    }
+    if (maxLength && value.length === maxLength) {
+        return value.substring(0, value.length - 1);
+    }
+    return value;
+}
+
 export const TextField: FC<ITextFieldProps> = ({
                                                    name, label, placeholder, mask, type, validate,
                                                    visible = true, disabled = false, icons = {}, minimize, ...rest
@@ -39,6 +49,12 @@ export const TextField: FC<ITextFieldProps> = ({
                     }
                     return formatStringByPattern(mask, value);
                 } }
+                parse={(value) => {
+                    if (!mask) {
+                        return value;
+                    }
+                    return formatValue(value, mask.length + 1);
+                }}
                 { ...rest }
             >
                 {

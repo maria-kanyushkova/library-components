@@ -74,13 +74,11 @@ export class SwitchesPage extends Component {
                         <CheckboxField
                             name="checkboxFieldLabel"
                             value={"first"}
-                            checked={get(api.values, "checkboxFieldLabel", []).indexOf("first") !== -1}
                             label={"Label"}
                         />
                         <CheckboxField
                             name="checkboxFieldLabel"
                             value={"second"}
-                            checked={get(api.values, "checkboxFieldLabel", []).indexOf("second") !== -1}
                             label={"Label"}
                         />
                     </div>
@@ -88,24 +86,20 @@ export class SwitchesPage extends Component {
                         <CheckboxField
                             name="checkboxField"
                             value={"first"}
-                            checked={get(api.values, "checkboxField", []).indexOf("first") !== -1}
                         />
                         <CheckboxField
                             name="checkboxField"
                             value={"second"}
-                            checked={get(api.values, "checkboxField", []).indexOf("second") !== -1}
                         />
                     </div>
                     <div className="components-store__item checkbox-fields">
                         <CheckboxField
                             name="checkboxFieldWithValue"
                             value={"first"}
-                            checked={get(api.values, "checkboxFieldWithValue", []).indexOf("first") !== -1}
                         />
                         <CheckboxField
                             name="checkboxFieldWithValue"
                             value={"second"}
-                            checked={get(api.values, "checkboxFieldWithValue", []).indexOf("second") !== -1}
                         />
                     </div>
                     <div className="components-store__item checkbox-fields">
@@ -113,13 +107,11 @@ export class SwitchesPage extends Component {
                             name="checkboxFieldDisabled"
                             value={"first"}
                             disabled={true}
-                            checked={get(api.values, "checkboxFieldDisabled", []).indexOf("first") !== -1}
                         />
                         <CheckboxField
                             name="checkboxFieldDisabled"
                             value={"second"}
                             disabled={true}
-                            checked={get(api.values, "checkboxFieldDisabled", []).indexOf("second") !== -1}
                         />
                     </div>
                     <div className="components-store__item checkbox-fields">
@@ -127,13 +119,11 @@ export class SwitchesPage extends Component {
                             name="checkboxFieldDisabledWithValue"
                             value={"first"}
                             disabled={true}
-                            checked={get(api.values, "checkboxFieldDisabledWithValue", []).indexOf("first") !== -1}
                         />
                         <CheckboxField
                             name="checkboxFieldDisabledWithValue"
                             value={"second"}
                             disabled={true}
-                            checked={get(api.values, "checkboxFieldDisabledWithValue", []).indexOf("second") !== -1}
                         />
                     </div>
                 </div>
@@ -142,13 +132,11 @@ export class SwitchesPage extends Component {
                         <RadioField
                             name="radioFieldLabel"
                             value={"first"}
-                            checked={get(api.values, "checkboxField", "") === "first"}
                             label={"Label"}
                         />
                         <RadioField
                             name="radioFieldLabel"
                             value={"second"}
-                            checked={get(api.values, "checkboxField", "") === "second"}
                             label={"Label"}
                         />
                     </div>
@@ -156,24 +144,20 @@ export class SwitchesPage extends Component {
                         <RadioField
                             name="radioField"
                             value={"first"}
-                            checked={get(api.values, "checkboxField", "") === "first"}
                         />
                         <RadioField
                             name="radioField"
                             value={"second"}
-                            checked={get(api.values, "checkboxField", "") === "second"}
                         />
                     </div>
                     <div className="components-store__item radio-fields">
                         <RadioField
                             name="radioFieldWithValue"
                             value={"first"}
-                            checked={get(api.values, "radioFieldWithValue", "") === "first"}
                         />
                         <RadioField
                             name="radioFieldWithValue"
                             value={"second"}
-                            checked={get(api.values, "radioFieldWithValue", "") === "second"}
                         />
                     </div>
                     <div className="components-store__item radio-fields">
@@ -181,13 +165,11 @@ export class SwitchesPage extends Component {
                             name="radioFieldDisabled"
                             value={"first"}
                             disabled={true}
-                            checked={get(api.values, "radioFieldDisabled", "") === "first"}
                         />
                         <RadioField
                             name="radioFieldDisabled"
                             value={"second"}
                             disabled={true}
-                            checked={get(api.values, "radioFieldDisabled", "") === "second"}
                         />
                     </div>
                     <div className="components-store__item radio-fields">
@@ -195,13 +177,11 @@ export class SwitchesPage extends Component {
                             name="radioFieldDisabledWithValue"
                             value={"first"}
                             disabled={true}
-                            checked={get(api.values, "radioFieldDisabledWithValue", "") === "first"}
                         />
                         <RadioField
                             name="radioFieldDisabledWithValue"
                             value={"second"}
                             disabled={true}
-                            checked={get(api.values, "radioFieldDisabledWithValue", "") === "second"}
                         />
                     </div>
                 </div>

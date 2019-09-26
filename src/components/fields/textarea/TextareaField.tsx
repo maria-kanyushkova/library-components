@@ -5,7 +5,6 @@ import { IField } from "../IField";
 import { getError } from "../../../utils";
 import "./TextareaField.scss";
 import { Nullable } from "../../../interfaces";
-import formatStringByPattern from "format-string-by-pattern";
 import autosize from "autosize";
 
 type TextareaType = string;
@@ -35,12 +34,6 @@ export const TextareaField: FC<IField<TextareaType>> = ({
             <Field
                 name={name}
                 validate={validateField}
-                format={(value) => {
-                    if (!mask) {
-                        return value;
-                    }
-                    return formatStringByPattern(mask, value);
-                }}
                 {...rest}
             >
                 {
