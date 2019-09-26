@@ -15,7 +15,7 @@ interface ICustomFormProps<T> {
 
 	submit(data: T, form?: FormApi<T>): Promise<Nullable<object>> | object | void;
 
-	validate?(values: T): ValidationErrors;
+	validate?(values: T): ValidationErrors | Promise<ValidationErrors>;
 }
 
 export const CustomForm = <T extends object>(props: ICustomFormProps<T>) => {
