@@ -9,7 +9,8 @@
     "build": "rimraf build && concurrently -n webpack,typescript \"npm run build_only_modules\" \"npm run build_only_types\"",
     "build_only_modules": "webpack --config webpack.build.js --mode production",
     "build_only_types": "tsc -p tsconfig.build.json",
-    "start": "webpack-dev-server --mode development --color --host 0.0.0.0"
+    "start": "webpack-dev-server --mode development --color --host 0.0.0.0",
+    "start:dev": "webpack-dev-server --mode development --color"
   },
   "dependencies": {
     "classnames": "^2.2.6",

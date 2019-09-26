@@ -33,8 +33,8 @@ export class FieldsPage extends Component {
                         textareaFieldWithValue: "Value",
                         textareaFieldDisabledWithValue: "Value",
 
-                        selectFieldWithValue: options[2],
-                        selectFieldDisabledWithValue: options[2],
+                        selectFieldWithValue: "vanilla",
+                        selectFieldDisabledWithValue: "chocolate",
                     } }
                     validate={(values) => {
 						const currentKeys = [

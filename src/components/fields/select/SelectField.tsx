@@ -1,15 +1,24 @@
 import * as React from "react";
-import { FC, Fragment } from "react";
-import { Field } from "react-final-form";
+import { FC, Fragment, ReactText } from "react";
+import { Field, FieldRenderProps } from "react-final-form";
 import { getError } from "../../../utils";
 import "../Field.scss";
 import "./SelectField.scss";
-import { ISelectFieldProps } from "./ISelectFieldProps";
 import Select from "react-select";
+import { ValueType } from "react-select/src/types";
+import { isEmpty } from "lodash";
+import { IField } from "../IField";
+import { IItem } from "../../../interfaces/field";
+
+type TSelectField = ReactText;
+
+export interface ISelectFieldProps extends IField<TSelectField, HTMLElement> {
+    options: IItem[];
+}
 
 export const SelectField: FC<ISelectFieldProps> = (props) => {
     const {
-        name, label, type, options, placeholder, value,
+        name, label, type, options, placeholder, defaultValue,
         visible = true, disabled = false, ...rest
     } = props;
     const customStyles = {
@@ -53,18 +62,25 @@ export const SelectField: FC<ISelectFieldProps> = (props) => {
         <div className="field select-field">
             <Field
                 name={name}
-                type="radio"
                 {...rest}
             >
                 {
-                    (fieldProps) => {
+                    (fieldProps: FieldRenderProps<TSelectField, HTMLElement>) => {
+                        const { onChange, value } = fieldProps.input;
                         const error = getError(fieldProps, type);
+                        const onChangeValue = (option: ValueType<IItem>) => {
+                            const value = isEmpty(option) ? void 0 : (option as IItem).value;
+                            onChange(value);
+                        };
+                        const convertValue = (currentValue: TSelectField): ValueType<IItem> => {
+                             const option = options.find((option) => option.value === currentValue);
+                             return isEmpty(option) ? void 0 : option;
+                        };
                         return (
                             <Fragment>
                                 <div className="select" data-disable={disabled}>
                                     <Select
-                                        value={value}
-                                        defaultValue={value}
+                                        value={convertValue(value)}
                                         options={options}
                                         isDisabled={disabled}
                                         placeholder={placeholder}
@@ -73,7 +89,7 @@ export const SelectField: FC<ISelectFieldProps> = (props) => {
                                         className={"field__input select-input"}
                                         classNamePrefix={"select-field"}
                                         styles={customStyles}
-
+                                        onChange={onChangeValue}
                                     />
                                     <div className="select-label" data-show={!!label}>{label}</div>
                                 </div>
