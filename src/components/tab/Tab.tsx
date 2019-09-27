@@ -8,15 +8,16 @@ export interface ICustomTabProps {
     items: ITabItem[];
     className?: string;
     type?: string;
+    initialState?: number;
 }
 
 export const Tab: FC<ICustomTabProps> = (props) => {
-    const { children, className = "", items } = props;
+    const { children, className = "", items, initialState = 0 } = props;
     const classes = classNames({
         ["tabs-container"]: true,
         [className]: true,
     });
-    const [ activeTab, setActiveTab ] = useState(0);
+    const [ activeTab, setActiveTab ] = useState(initialState);
     return (
         <div className={ classes }>
             <div className="tabs">
