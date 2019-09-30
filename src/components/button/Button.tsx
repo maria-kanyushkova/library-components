@@ -5,7 +5,8 @@ import "./Button.scss";
 import { IButtonProps } from "./IButtonProps";
 import { EButtonType } from "./EButtonType";
 import { isEmpty } from "lodash";
-import { ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, ArrowTopIcon, PlusIcon } from "./img";
+import { ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, ArrowTopIcon, DownloadIcon, PlusIcon } from "./img";
+import { UploadIcon } from "./img/UploadIcon";
 
 export const Button: FC<IButtonProps> = (props) => {
     const {
@@ -38,6 +39,10 @@ export const Button: FC<IButtonProps> = (props) => {
                 return <ArrowLeftIcon type={type} focused={focused} disabled={disabled}/>;
             case EButtonType.ARROW_TOP:
                 return <ArrowTopIcon type={type} focused={focused} disabled={disabled}/>;
+            case EButtonType.DOWNLOAD:
+                return <DownloadIcon type={type} focused={focused} disabled={disabled}/>;
+            case EButtonType.UPLOAD:
+                return <UploadIcon type={type} focused={focused} disabled={disabled}/>;
             default:
                 return void 0;
         }
