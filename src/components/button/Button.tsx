@@ -5,8 +5,7 @@ import "./Button.scss";
 import { IButtonProps } from "./IButtonProps";
 import { EButtonType } from "./EButtonType";
 import { isEmpty } from "lodash";
-import { ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, ArrowTopIcon, DownloadIcon, PlusIcon } from "./img";
-import { UploadIcon } from "./img/UploadIcon";
+import { ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, ArrowTopIcon, DownloadIcon, PlusIcon, UploadIcon } from "./img";
 
 export const Button: FC<IButtonProps> = (props) => {
     const {
