@@ -5,3 +5,5 @@ export * from "./PlusIcon";
 export * from "./ArrowLeftIcon";
 export * from "./ArrowRightIcon";
 export * from "./ArrowTopIcon";
+export * from "./DownloadIcon";
+export * from "./UploadIcon";

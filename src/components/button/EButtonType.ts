@@ -5,4 +5,6 @@ export enum EButtonType {
     ARROW_RIGHT = "arrow-right",
     ARROW_LEFT = "arrow-left",
     ARROW_TOP = "arrow-top",
+    DOWNLOAD = "download",
+    UPLOAD = "upload",
 }
