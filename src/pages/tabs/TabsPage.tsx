@@ -14,7 +14,7 @@ const tabContent = {
 };
 
 export const TabsPage: FC = () => {
-    const [ type, setTabType ] = useState(EClientCardTabType.ORDERS);
+    const [ type, setTabType ] = useState(EClientCardTabType.SALES);
     return (
         <div className="components-store">
             <div className="components-store_1-column">
@@ -27,6 +27,7 @@ export const TabsPage: FC = () => {
                         { text: "Анкета", handler: () => setTabType(EClientCardTabType.QUESTIONNAIRE) },
                         { text: "Подборки", handler: () => setTabType(EClientCardTabType.COLLECTIONS) },
                     ] }
+                    initialState={EClientCardTabType.SALES}
                 >
                     { tabContent[type] }
                 </Tab>

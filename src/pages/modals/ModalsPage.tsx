@@ -24,17 +24,6 @@ export class ModalsPage extends Component<{}, IModalsPageState> {
     render(): ReactNode {
         return (
             <div className="components-store">
-                <div className="components-store_1-column">
-                    <Button
-                        onClick={ () => {
-                            this.popup.show();
-                            this.forceUpdate();
-                        } }
-                        type="primary"
-                        text="Открыть popup"
-                    />
-                    { this.popup.draw() }
-                </div>
                 <div className="components-store_4-column" style={ { marginTop: 200 } }>
                     <Alert
                         title="Alert"
