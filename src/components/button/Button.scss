@@ -93,6 +93,12 @@
         }
     }
 
+    &.text-center {
+        .text {
+            text-align: center;
+        }
+    }
+
     .text {
         @include set-font-style(500, 16px, "SFDisplay");
 

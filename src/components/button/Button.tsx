@@ -4,7 +4,6 @@ import { FC, ReactNode, useState } from "react";
 import "./Button.scss";
 import { IButtonProps } from "./IButtonProps";
 import { EButtonType } from "./EButtonType";
-import { isEmpty } from "lodash";
 import { ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, ArrowTopIcon, DownloadIcon, PlusIcon, UploadIcon } from "./img";
 
 export const Button: FC<IButtonProps> = (props) => {
@@ -22,7 +21,7 @@ export const Button: FC<IButtonProps> = (props) => {
         ["button-tiny"]: isTiny,
         ["button-mini"]: isMini,
         ["button-double"]: isDouble,
-        ["text-center"]: isEmpty(icon),
+        ["text-center"]: `${icon}`.length === 0,
         disabled,
     });
 
