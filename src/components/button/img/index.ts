@@ -7,3 +7,6 @@ export * from "./ArrowRightIcon";
 export * from "./ArrowTopIcon";
 export * from "./DownloadIcon";
 export * from "./UploadIcon";
+export * from "./CommentIcon";
+export * from "./DawIcon";
+export * from "./CompareIcon";

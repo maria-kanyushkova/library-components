@@ -7,4 +7,7 @@ export enum EButtonType {
     ARROW_TOP = "arrow-top",
     DOWNLOAD = "download",
     UPLOAD = "upload",
+    COMMENT = "comment",
+    DAW = "daw",
+    COMPARE = "compare",
 }

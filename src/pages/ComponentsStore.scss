@@ -15,6 +15,10 @@
     @include addColumnType(6);
     @include addColumnType(7);
     @include addColumnType(8);
+    @include addColumnType(9);
+    @include addColumnType(10);
+    @include addColumnType(12);
+    @include addColumnType(15);
 
     > div {
         display: grid;
@@ -29,6 +33,10 @@
             width: 100%;
             margin: auto !important;
         }
+    }
+
+    .button__item {
+        height: 100px;
     }
 
     .double-buttons {
