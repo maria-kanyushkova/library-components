@@ -4,7 +4,18 @@ import { FC, ReactNode, useState } from "react";
 import "./Button.scss";
 import { IButtonProps } from "./IButtonProps";
 import { EButtonType } from "./EButtonType";
-import { ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, ArrowTopIcon, DownloadIcon, PlusIcon, UploadIcon } from "./img";
+import {
+    ArrowDownIcon,
+    ArrowLeftIcon,
+    ArrowRightIcon,
+    ArrowTopIcon,
+    CommentIcon,
+    CompareIcon,
+    DawIcon,
+    DownloadIcon,
+    PlusIcon,
+    UploadIcon
+} from "./img";
 
 export const Button: FC<IButtonProps> = (props) => {
     const {
@@ -30,7 +41,7 @@ export const Button: FC<IButtonProps> = (props) => {
             case EButtonType.PLUS:
                 return <PlusIcon type={type} focused={focused} disabled={disabled} isTiny={isTiny}/>;
             case EButtonType.ARROW_DOWN:
-                return <ArrowDownIcon type={type} focused={focused} disabled={disabled} isTiny={isTiny}/>;
+                return <ArrowDownIcon type={type} focused={focused} disabled={disabled}/>;
             case EButtonType.ARROW_RIGHT:
                 return <ArrowRightIcon type={type} focused={focused} disabled={disabled}/>;
             case EButtonType.ARROW_LEFT:
@@ -41,6 +52,12 @@ export const Button: FC<IButtonProps> = (props) => {
                 return <DownloadIcon type={type} focused={focused} disabled={disabled}/>;
             case EButtonType.UPLOAD:
                 return <UploadIcon type={type} focused={focused} disabled={disabled}/>;
+            case EButtonType.COMMENT:
+                return <CommentIcon type={type} focused={focused} disabled={disabled}/>;
+            case EButtonType.DAW:
+                return <DawIcon type={type} focused={focused} disabled={disabled} isTiny={isTiny}/>;
+            case EButtonType.COMPARE:
+                return <CompareIcon type={type} focused={focused} disabled={disabled}/>;
             default:
                 return void 0;
         }
